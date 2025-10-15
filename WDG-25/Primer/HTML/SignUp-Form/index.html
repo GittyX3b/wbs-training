@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp from</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>Sign up to a Bootcamp!</h1>
+      <p>
+        Unlock your potential and start your journey in tech with OurCoding
+        School! Our hands-on program is designed for beginners and aspiring
+        developers. Learn the latest coding skills, build real projects, and
+        join a supportive community. Sign up today and take the first step
+        toward a rewarding career in programming!
+      </p>
+    </header>
+    <!-- MAIN -->
+    <main>
+      <section>
+        <article>
+          <form id="sign-up-form">
+            <fieldset>
+              <legend>Personal Information:</legend>
+              <div>
+                <label for="user-firstname">First Name:</label>
+                <input
+                  type="text"
+                  id="user-firstname"
+                  name="userfirstname"
+                  required
+                />
+              </div>
+              <div>
+                <label for="userlastname">Last Name:</label>
+                <input
+                  type="text"
+                  id="user-lastname"
+                  name="user-lastname"
+                  required
+                />
+              </div>
+              <div>
+                <label for="user-email">Email:</label>
+                <input type="email" id="user-email" name="useremail" required />
+              </div>
+              <div>
+                <label for="user-phone">Phone:</label>
+                <input type="tel" id="user-phone" name="userphone" required />
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Your educational Interests:</legend>
+              <div>
+                <label for="user-choice">Bootcamp Choice:</label>
+                <select id="user-choice" name="userchoice" required>
+                  <option selected disabled>-- make your choice --</option>
+                  <option value="1">App & Web Development</option>
+                  <option value="2">Data Science</option>
+                  <option value="3">Network Security</option>
+                  <option value="4">UI/UX</option>
+                  <option value="5">Python</option>
+                </select>
+              </div>
+              <br />
+              <div>
+                <label for="usertype-options">Study Type:</label>
+                <div id="usertype-options">
+                  <input
+                    type="radio"
+                    id="usertype-early"
+                    name="usertype"
+                    value="1"
+                  />
+                  <label for="usertype-early">Early Bird</label>
+                  <input
+                    type="radio"
+                    id="usertype-workday"
+                    name="usertype"
+                    value="2"
+                  />
+                  <label for="usertype-workday">9 to 5</label>
+                  <input
+                    type="radio"
+                    id="usertype-late"
+                    name="usertype"
+                    value="3"
+                  />
+                  <label for="usertype-late">Sleepwalker</label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <div>
+                <button type="submit">Send</button>
+                <button type="reset">Reset</button>
+              </div>
+            </fieldset>
+          </form>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
