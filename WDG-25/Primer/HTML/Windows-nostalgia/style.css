@@ -1,0 +1,101 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://i.ytimg.com/vi/Zc8d_fo2LoE/maxresdefault.jpg)
+    no-repeat;
+  background-size: cover;
+
+  & .window {
+    width: 660px;
+    height: 240px;
+    background: #c0c0c0;
+    border-radius: 5px;
+    border: 4px outset #84a3b5;
+    border-top-color: #f0f5ff;
+    border-left-color: #f0f5ff;
+    box-shadow: 3px 3px 30px grey;
+
+    & .window-header {
+      padding: 5px 25px 5px;
+      background: linear-gradient(
+        90deg,
+        rgba(12, 35, 105, 1) 0%,
+        rgba(174, 205, 244, 1) 100%
+      );
+      border-bottom: 1px outset #b6bbbf;
+
+      & span {
+        color: white !important;
+        font-size: 1.3rem;
+        font-weight: 900;
+      }
+    }
+
+    & .window-message {
+      width: 100%;
+      height: 120px;
+      display: flex;
+
+      & .window-message-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 120px;
+
+        & img {
+          height: inherit;
+          width: inherit;
+        }
+      }
+
+      & .window-message-text {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        font-size: 1.35rem;
+        font-weight: 500;
+      }
+    }
+
+    & .window-button-container {
+      height: 70px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      & button {
+        margin-right: 30px;
+        margin-bottom: 30px;
+        padding: 5px 25px 5px;
+        font-size: 1.3rem;
+        border-radius: 0px;
+        border: 3px outset #84a3b5;
+        border-top-color: #f0f5ff;
+        border-left-color: #f0f5ff;
+
+        &:hover {
+          cursor: pointer;
+          background: rgb(234, 234, 234);
+        }
+
+        &:active {
+          cursor: grab;
+          border: 2px outset #94b5c8;
+          border-top-color: #f0f5ff;
+          border-left-color: #f0f5ff;
+        }
+      }
+    }
+  }
+}
