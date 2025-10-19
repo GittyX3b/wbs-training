@@ -1,0 +1,95 @@
+@media (min-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+
+  html {
+    display: flex;
+    justify-content: center;
+  }
+
+  body {
+    max-width: 1600px;
+    background: lightgray;
+    box-shadow: 0px 0px 20px black;
+
+    header {
+      max-width: inherit;
+      margin: 0 auto;
+
+      & #topbar {
+        max-width: inherit;
+        font-size: 1.6rem;
+
+        & #topbar-icon {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    main {
+      max-width: inherit;
+
+      & section {
+        display: grid;
+        grid-template-areas: "intro intro" "about why-adopt" "gallery gallery";
+        background: white;
+
+        & article {
+          &#intro {
+            grid-area: intro;
+            padding-top: 12%;
+
+            & h1 {
+              font-size: 4rem;
+            }
+          }
+
+          &#about-us {
+            grid-area: about;
+          }
+
+          &#why-adopt {
+            grid-area: why-adopt;
+            padding: 12%;
+            font-size: 1.3em;
+
+            & li {
+              padding: 2% 0%;
+            }
+          }
+
+          &#meet-our-dogs {
+            grid-area: gallery;
+            background: whitesmoke;
+
+            & figcaption {
+              background: white;
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+
+      & #contact {
+        max-width: 1300px;
+        margin: auto;
+      }
+    }
+
+    footer {
+      max-width: inherit;
+      text-align: center;
+    }
+  }
+
+  /* general selectors ----------------------------------- */
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  /* general classes ------------------------------------- */
+  .container {
+    padding: 5%;
+  }
+}
