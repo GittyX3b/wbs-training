@@ -1,0 +1,79 @@
+@media screen and (min-width: 1024px) {
+  header img {
+    width: 100%;
+  }
+
+  main {
+    background-size: cover;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "about services"
+      "gallery gallery"
+      "contact contact";
+
+    & #title {
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+
+    & #services {
+      background: transparent !important;
+      color: inherit !important;
+
+      & summary {
+        cursor: crosshair;
+      }
+    }
+
+    & #contact {
+      padding: 100px 25%;
+    }
+  }
+
+  .container {
+    padding: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    h1 {
+      max-width: 2000px !important;
+    }
+
+    & #gallery {
+      & figure {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    & #contact {
+      padding: 100px 35%;
+
+      & h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  :root {
+    font-size: 28px;
+  }
+
+  body {
+    background: black;
+    background-image: url(./ressources/background_body.webp);
+    background-repeat: repeat;
+
+    & #wrapper {
+      margin: auto;
+      max-width: 2000px;
+      border-left: 2px solid #d7f6fa;
+      border-right: 2px solid #d7f6fa;
+      box-shadow: 0px 0px 100px #d7f6fa;
+    }
+  }
+}

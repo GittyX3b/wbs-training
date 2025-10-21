@@ -1,0 +1,7 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* DEVICE STYLES (mobile first) */
+@import url(./style_mobile.css);
+@import url(./style_tablet.css);
+@import url(./style_desktop.css);

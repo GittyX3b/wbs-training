@@ -1,0 +1,160 @@
+:root {
+  font-family: "Rubik";
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  & #wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+header {
+  background: #010b1c;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* flexbox */
+}
+
+main {
+  background-image: url(./ressources/background.webp);
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+  flex: 1;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "title" "about" "services" "gallery" "contact";
+
+  & #title {
+    grid-area: title;
+    background: #010b1c;
+    position: sticky;
+    top: 0;
+    padding: 3%;
+    text-align: center;
+    font-family: "Audiowide";
+    box-shadow: 0px 5px 5px -5px silver;
+    border-bottom: 1px solid silver;
+    z-index: 2;
+  }
+
+  & #about {
+    grid-area: about;
+  }
+
+  & #services {
+    grid-area: services;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    color: #010b1c;
+
+    & details {
+      padding: 3%;
+
+      & summary {
+        font-weight: 600;
+      }
+      & p {
+        padding: 2% 5% 10% 5%;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  & #gallery {
+    grid-area: gallery;
+    display: flex;
+    flex-direction: column;
+
+    & figure {
+      display: grid;
+      grid-template-rows: repeat(6, fit-content);
+
+      & img {
+        border-radius: 10%;
+        margin: 10% 0%;
+        box-shadow: 0px 0px 20px #d7f6fa;
+        border: 2px solid #d7f6fa;
+      }
+    }
+  }
+
+  & #contact {
+    grid-area: contact;
+    background: rgba(192, 192, 192, 0.5);
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      padding: 5% 0% 10% 0%;
+
+      & .formfield {
+        width: 100%;
+        margin-bottom: 5%;
+
+        & label {
+          font-weight: 600;
+        }
+
+        & input,
+        textarea {
+          width: 100%;
+          padding: 1%;
+          border: 2px inset #d7f6fa;
+          border-radius: 0px;
+          opacity: 0.7;
+
+          &:focus {
+            background-color: rgb(207, 241, 207);
+            opacity: 1;
+            outline: 2px solid limegreen;
+          }
+        }
+      }
+
+      & .button-container {
+        display: flex;
+        margin-top: 13%;
+
+        & button {
+          background: mediumseagreen;
+          flex: 1;
+          padding: 4%;
+          color: white;
+          font-size: 1.2rem;
+          font-weight: 600;
+          border: 2px solid #d7f6fa;
+          box-shadow: 0px 0px 10px #d7f6fa;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: #010b1c;
+  width: 100%;
+  text-align: center;
+  padding: 20% 10%;
+}
+
+h2 {
+  margin-bottom: 7%;
+}
+
+/* general classes ---------*/
+.container {
+  padding: 10% 10%;
+}

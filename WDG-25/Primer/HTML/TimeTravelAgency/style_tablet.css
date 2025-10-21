@@ -1,0 +1,56 @@
+@media screen and (min-width: 640px) {
+  :root {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  #title {
+    font-size: 3rem;
+    padding: 1% !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  #title {
+    font-size: 2em;
+  }
+
+  #gallery {
+    grid-area: gallery;
+    display: flex;
+    flex-direction: column;
+
+    & figure {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10%;
+
+      & img {
+        margin: 10%;
+      }
+    }
+  }
+
+  #contact {
+    & .formfield {
+      margin-bottom: 3% !important;
+    }
+
+    & .button-container {
+      margin-top: 4% !important;
+    }
+  }
+
+  footer {
+    padding: 3%;
+  }
+}
