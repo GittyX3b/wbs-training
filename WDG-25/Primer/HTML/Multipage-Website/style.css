@@ -1,0 +1,15 @@
+header {
+  display: grid;
+  grid-template-areas: "topbar" "banner";
+
+  & topbar {
+    grid-area: topbar;
+    background: sandybrown;
+
+    display: grid;
+
+    & nav {
+      grid-area: navigation;
+    }
+  }
+}
