@@ -1,15 +1,102 @@
+:root {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+  font-size: clamp(1rem, 0.8354rem + 0.7317vw, 1.75rem);
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: auto;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 header {
-  display: grid;
-  grid-template-areas: "topbar" "banner";
+  display: flex;
+  flex-direction: column;
+  width: inherit;
 
-  & topbar {
-    grid-area: topbar;
-    background: sandybrown;
+  & #topbar {
+    background: white;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: fit-content;
+    padding-block: 1vh;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0px -5px 16px rgb(255, 255, 255);
+    font-weight: 600;
 
-    display: grid;
+    & a {
+      text-decoration: none;
+    }
 
-    & nav {
-      grid-area: navigation;
+    & #company-info {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 48vw;
+      color: brown;
+
+      & #company-logo {
+        font-size: clamp(1.125rem, 0.8rem + 1.9vw, 3rem);
+        padding-left: 2vw;
+      }
+
+      & #company-name {
+        font-size: clamp(1.125rem, 1rem + 0.9vw, 3rem);
+        padding-left: 1vw;
+      }
+    }
+
+    & #navbar {
+      width: 58vw;
+
+      & ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        list-style: none;
+      }
+
+      & a {
+        font-size: clamp(0.8rem, 0.6329rem + 0.9vw, 2rem);
+        color: inherit;
+      }
     }
   }
+
+  & #banner {
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 4vw;
+
+    & img {
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+}
+
+main {
+  background: brown;
+  height: 100%;
+  flex-grow: 1;
+
+  min-height: 200vh;
 }
