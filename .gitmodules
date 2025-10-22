@@ -1,0 +1,4 @@
+[submodule "WBS-Repo"]
+    url = git@github.com:ReynkeDeVos/WDG25-git-intro.git
+    branch = main
+    path = WBS-Repo
