@@ -1,0 +1,25 @@
+main {
+  & #welcome {
+    background: mintcream;
+  }
+
+  & #daily-special {
+    background: orange;
+  }
+
+  & #opening-times {
+    background: lightblue;
+  }
+
+  & #gallery {
+    background: thistle;
+  }
+
+  & #contact-us {
+    background: seashell;
+  }
+
+  & #location {
+    background: olive;
+  }
+}
