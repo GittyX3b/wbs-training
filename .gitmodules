@@ -6,3 +6,6 @@
 	path = WDG-25/Primer/Arbeit_mit_Abood
 	url = git@github.com:abdulaah-alchag/gruppe-3.git
 	branch=main
+[submodule "WDG-25/Frontend/DandyMonicaJan"]
+	path = WDG-25/Frontend/DandyMonicaJan
+	url = git@github.com:jan-ninh/DandyMonicaJan.git
