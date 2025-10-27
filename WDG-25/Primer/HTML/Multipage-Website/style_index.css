@@ -1,0 +1,83 @@
+main {
+  & #welcome {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    user-select: none;
+
+    & #welcome-heading {
+      width: 80%;
+      text-align: center;
+    }
+
+    & #welcome-text {
+      width: 70%;
+      color: black;
+      text-align: center;
+    }
+
+    & #welcome-button {
+      outline: 1px dotted pink;
+    }
+  }
+
+  & #daily-special {
+    background: brown;
+    color: white;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10vh 6vh;
+
+    & h3 {
+      text-align: center;
+    }
+
+    & figure {
+      border: 2vw groove white;
+      width: fit-content;
+      margin-block: 3vh;
+
+      & img {
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+  }
+
+  & #opening-times {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10vh 4vh;
+
+    & h2 {
+      margin-bottom: 5vh;
+    }
+
+    & div {
+      width: 60vw;
+      max-width: 500px;
+      display: flex;
+      justify-content: space-between;
+      color: black;
+    }
+  }
+
+  & #gallery {
+    background: thistle;
+  }
+
+  & #contact-us {
+    background: seashell;
+  }
+
+  & #location {
+    background: olive;
+  }
+}

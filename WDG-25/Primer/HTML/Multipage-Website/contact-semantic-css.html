@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_contact.css" />
+  </head>
+  <body>
+    <!-- HEADER -------------------------------------------------------------->
+    <header>
+      <!-- TOPBAR -->
+      <div id="topbar">
+        <a id="company-info" href="./index-semantic-css.html">
+          <div id="company-logo">&#x26FE;</div>
+          <div id="company-name">Bobby Browns</div>
+        </a>
+
+        <!-- NAVIGATION  -->
+        <nav id="navbar">
+          <ul>
+            <li><a href="./index-semantic-css.html">Home</a></li>
+            <li><a href="./about-semantic-css.html">About </a></li>
+            <li><a href="./contact-semantic-css.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- BANNER -->
+      <figure id="banner">
+        <img
+          src="./ressources/contact/contact-header.webp"
+          source="https://www.pexels.com/photo/people-holding-mugs-1524335/"
+          alt="Photographer: Lisa from Pexels"
+        />
+      </figure>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <h1>Contact us</h1>
+      <div>
+        <ul>
+          <li>P: <a href="tel:+1234567890">+12 345 678 90</a></li>
+          <li>
+            E: <a href="mailto:info@bobbysbarn.com">info@bobbysbarn.com</a>
+          </li>
+          <li>
+            W:
+            <a href="https://bobbysbarn.com" target="_blank">bobbysbarn.com</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <form>
+          <label for="username">Name</label>
+          <input type="text" name="username" id="username" />
+          <br />
+          <label for="usermail">Email</label>
+          <input type="email" name="usermail" id="usermail" />
+          <br />
+          <label for="usermessage">Message</label>
+          <textarea name="usermessage" id="usermessage"></textarea>
+          <br />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>FOOTER</footer>
+  </body>
+</html>
