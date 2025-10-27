@@ -99,6 +99,11 @@ main {
   flex-grow: 1;
 }
 
+footer {
+  text-align: center;
+  padding: 3vh;
+}
+
 /* general selectors */
 section {
   display: block;
