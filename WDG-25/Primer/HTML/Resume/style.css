@@ -32,6 +32,11 @@ header {
     border: 5px solid whitesmoke;
     border-radius: 50%;
     overflow: hidden;
+
+    & figure {
+      padding: 0;
+      margin: 0;
+    }
   }
 
   & #header-text {
@@ -41,19 +46,22 @@ header {
     & h1 {
       font-size: 5rem;
       font-style: italic;
-      padding-bottom: 11vh;
+      padding-bottom: 6vh;
     }
 
-    & h2 {
-      font-size: 2rem;
+    & h2 {
+      font-size: 3rem;
+      padding-left: 2rem;
       padding-bottom: 1vh;
     }
 
     & ul li {
-      font-size: 1.5rem;
+      list-style-type: none;
+      font-size: 2rem;
     }
 
     & a {
+      font-size: 2rem;
       color: rgb(76, 200, 241);
       text-shadow: rgb(255, 255, 255) 1px 1px 0px;
     }

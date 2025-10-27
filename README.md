@@ -7,3 +7,7 @@
 [-> WBS Playground](https://playground.wbscod.in/)
 [-> WBS Repository](https://github.com/WDG-025)
 [-> Eigene Lehrmaterialien](https://drive.google.com/drive/u/0/folders/14ijuJ_jeOQznFUte3jb3lYdPnfbaJcHU)
+
+## Project-Links
+
+Overview: [-> /root](https://gittyx3b.github.io/wbs-training)
