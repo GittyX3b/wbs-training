@@ -1,6 +1,5 @@
 :root {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-
   font-size: clamp(1rem, 0.8354rem + 0.7317vw, 1.75rem);
 }
 
@@ -94,9 +93,35 @@ header {
 }
 
 main {
-  background: brown;
+  background: white;
+  color: brown;
   height: 100%;
   flex-grow: 1;
+}
 
-  min-height: 200vh;
+/* general selectors */
+section {
+  display: block;
+}
+
+/* general classes */
+.button {
+  background: papayawhip;
+  border: 6px solid moccasin;
+  box-shadow: 0px 0px 15px darkslategray;
+  border-radius: 50px;
+  padding: 1vh 8vw;
+  color: black;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+
+  &:active {
+    border: 6px solid white;
+    box-shadow: 0px 0px 5px darkslategray;
+    transform: scale(0.95);
+    cursor: grabbing;
+  }
 }
