@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playground Tailwind CSS</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d; /* adding custom color on variable 'clifford' */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-full fixed">
+      <h1 class="bg-clifford flex justify-center text-white text-4xl p-20 mt-5">
+        Tailwind CSS
+      </h1>
+    </div>
+    <div class="flex justify-center flex-wrap gap-5">
+      <div class="w-auto min-w-100 h-100 bg-blue-400">1</div>
+      <div class="w-auto min-w-100 h-100 bg-red-400">2</div>
+      <div class="w-auto min-w-100 h-100 bg-green-400">3</div>
+      <div class="w-auto min-w-100 h-100 bg-yellow-400">4</div>
+      <div class="w-auto min-w-100 h-100 bg-orange-400">5</div>
+      <div class="w-auto min-w-100 h-100 bg-slate-500">6</div>
+    </div>
+  </body>
+</html>
