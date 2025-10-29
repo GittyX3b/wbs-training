@@ -2,11 +2,14 @@
 	path = WBS-Repo
 	url = git@github.com:ReynkeDeVos/WDG25-git-intro.git
 	branch = main
+	ignore = dirty
 [submodule "WDG-25/Primer/Project1"]
 	path = WDG-25/Primer/Project1
 	url = https://github.com/abdulaah-alchag/gruppe-3
 	branch = main
+	ignore = dirty
 [submodule "WDG-25/Frontend/Project2"]
 	path = WDG-25/Frontend/Project2
 	url = git@github.com:jan-ninh/news-homepage.git
 	branch = main
+	ignore = dirty
