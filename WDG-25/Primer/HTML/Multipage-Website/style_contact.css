@@ -19,21 +19,20 @@ main {
   }
 
   #contact-form {
-    background:
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 5rem min(5rem, 2rem);
+    padding-block: 5rem;
 
     form {
-      width: 60%;
+      width: min(30rem, 80vw);
 
       fieldset {
         min-width: fit-content;
         display: flex;
         flex-direction: column;
         border-radius: 10px;
-        border: 1px dotted brown;
+        border: 0px dotted brown;
         background: whitesmoke;
 
         legend {
@@ -61,7 +60,7 @@ main {
             background: rgb(245, 233, 233);
             font-size: 0.8rem;
             border-radius: 10px;
-            border: 2px dashed brown;
+            border: 1px dashed brown;
           }
 
           textarea {
