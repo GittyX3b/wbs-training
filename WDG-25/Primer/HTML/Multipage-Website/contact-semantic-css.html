@@ -41,34 +41,40 @@
 
     <!-- MAIN -->
     <main>
-      <h1>Contact us</h1>
-      <div>
-        <ul>
-          <li>P: <a href="tel:+1234567890">+12 345 678 90</a></li>
-          <li>
-            E: <a href="mailto:info@bobbysbarn.com">info@bobbysbarn.com</a>
-          </li>
-          <li>
-            W:
-            <a href="https://bobbysbarn.com" target="_blank">bobbysbarn.com</a>
-          </li>
-        </ul>
-      </div>
+      <section id="contact-heading">
+        <h1>Contact us</h1>
+      </section>
 
-      <div>
+      <section id="contact-infos">
+        <div>P: <a href="tel:+1234567890">+12 345 678 90</a></div>
+        <div>
+          E: <a href="mailto:info@bobbysbarn.com">info@bobbysbarn.com</a>
+        </div>
+        <div>
+          W: <a href="https://bobbysbarn.com" target="_blank">bobbysbarn.com</a>
+        </div>
+      </section>
+
+      <section id="contact-form">
         <form>
-          <label for="username">Name</label>
-          <input type="text" name="username" id="username" />
-          <br />
-          <label for="usermail">Email</label>
-          <input type="email" name="usermail" id="usermail" />
-          <br />
-          <label for="usermessage">Message</label>
-          <textarea name="usermessage" id="usermessage"></textarea>
-          <br />
-          <button type="submit">Send</button>
+          <fieldset>
+            <legend>Send us a message!</legend>
+            <div>
+              <label for="username">Name:</label>
+              <input type="text" name="username" id="username" required />
+            </div>
+            <div>
+              <label for="usermail">Email:</label>
+              <input type="email" name="usermail" id="usermail" required />
+            </div>
+            <div>
+              <label for="usermessage">Message:</label>
+              <textarea name="usermessage" id="usermessage" required></textarea>
+            </div>
+            <button type="submit" class="button">Send</button>
+          </fieldset>
         </form>
-      </div>
+      </section>
     </main>
 
     <!-- FOOTER -->
