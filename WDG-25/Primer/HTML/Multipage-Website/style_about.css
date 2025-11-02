@@ -1,0 +1,51 @@
+main {
+  #about-welcome {
+    padding: min(4rem, 10%);
+    text-align: center;
+
+    h1 {
+      padding-bottom: min(12rem, 5%);
+    }
+  }
+
+  #about-menu {
+    background: papayawhip;
+    padding: min(4rem, 10%);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    h2 {
+      width: 100%;
+      padding-bottom: min(2rem, 4rem);
+      color: black;
+    }
+
+    h4 {
+      padding: min(1rem, 5vh);
+    }
+
+    table {
+      background: white;
+      width: 100%;
+      color: black;
+      border-radius: 20px;
+      padding: 20px;
+
+      td {
+        font-style: italic;
+      }
+    }
+
+    #about-menu-food,
+    #about-menu-drinks {
+      width: min(30rem, 400px);
+      flex-grow: 1;
+      padding: 1rem;
+
+      h4 {
+        font-weight: 600;
+      }
+    }
+  }
+}
