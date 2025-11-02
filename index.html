@@ -4,20 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GittyX3b - Overview</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-      body {
-        padding: 5%;
+      html,
+      body,
+      header,
+      main,
+      section,
+      aside,
+      footer {
+        min-width: fit-content;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+
+      header,
+      section {
+        padding-top: min(4rem, 10%);
+        padding-bottom: min(5rem, 14%);
+        padding-inline: min(3rem, 10%);
+        align-items: stretch;
+      }
+
+      h1 {
+        padding-block: min(2vw, 5%);
+        font-size: clamp(1.5rem, calc(10vw + 1rem), 2rem);
+      }
+
+      h2 {
+        padding-block: min(1vw, 3%);
+        font-size: clamp(1.3rem, 1.5rem, 2rem);
+      }
+
+      a {
+        color: gray;
+
+        &:hover {
+          color: darkslategray;
+          text-shadow: 0px 0px 15px slategray;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>GittyX3b - Overview</h1>
+    <header class="p-15">
+      <section id="title" class="bg-red">
+        <h1>GittyX3b - Overview</h1>
+      </section>
     </header>
 
-    <main>
-      <section id="Primer">
+    <main class="bg-blue-200 flex flex-wrap">
+      <section id="primer" class="bg-gray-100 w-full sm:w-1/2 lg:w-1/3">
         <h2>Primer</h2>
+
         <ul>
           <li>
             <a
@@ -54,7 +94,34 @@
               >Time Travel Agency</a
             >
           </li>
+          <li class="pt-5">
+            <a
+              href="https://abdulaah-alchag.github.io/gruppe-3/"
+              target="_blank"
+              >Project 1</a
+            >
+          </li>
         </ul>
+      </section>
+      <section id="frontend" class="bg-gray-200 w-full sm:w-1/2 lg:w-1/3">
+        <h2>Frontend</h2>
+        <ul>
+          <li>
+            <a
+              href="https://gittyx3b.github.io/wbs-training/WDG-25/Frontend/Tailwind-CSS/index.html"
+              target="_blank"
+              >Tailwind</a
+            >
+          </li>
+          <li class="pt-5">
+            <a href="https://jan-ninh.github.io/news-homepage/" target="_blank"
+              >Project 2</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section id="backend" class="bg-gray-300 w-full sm:w-1/2 lg:w-1/3">
+        <h2>Backend</h2>
       </section>
     </main>
   </body>
