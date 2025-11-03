@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
       @theme {
-        --color-wbsred: #f8495e;
+        --color-wbs-red: #f8495e;
       }
 
       html,
@@ -34,8 +34,12 @@
         padding-block: min(2vw, 5%);
         font-size: clamp(1.5rem, calc(10vw + 1rem), 2rem);
       }
-
       h2 {
+        padding-block: min(1.2vw, 4%);
+        font-size: clamp(1.3rem, 1.6rem, 2rem);
+      }
+
+      h3 {
         padding-block: min(1vw, 3%);
         font-size: clamp(1.3rem, 1.5rem, 2rem);
       }
@@ -77,145 +81,325 @@
     </style>
   </head>
   <body>
-    <header class="">
-      <section id="title" class="flex flex-wrap items-stretch justify-start">
-        <div class="bg-[#f8495e] w-full sm:w-1/6 h-[5rem] sm:h-[12rem] p-3">
+    <header>
+      <section id="title" class="flex flex-wrap">
+        <div class="w-full sm:w-1/5 bg-[#f8495e]">
           <img
-            src="https://media.licdn.com/dms/image/v2/D4D0BAQHRVFqKY5mj7A/company-logo_200_200/company-logo_200_200/0/1709018045816/wbs_coding_school_logo?e=2147483647&v=beta&t=BSzbJ0J65S8VCuTvTJoobA1ogftD29hb2zChRCuobNI"
-            alt="https://www.wbscodingschool.com/wp-content/uploads/2023/10/standard_colour_cutout_text_icon.png"
-            class="h-full object-cover rounded-[50%]"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1GJguJttWHozRL3iRdf-1sNx6HJUho7iSEw&s"
+            alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1GJguJttWHozRL3iRdf-1sNx6HJUho7iSEw&s"
+            class="object-cover h-33 sm:h-full p-6"
           />
         </div>
-        <div class="px-10 py-10 sm:py-2">
+        <div class="w-full sm:w-4/5 p-10">
           <h1 class="font-bold">WBS Coding Bootcamp</h1>
-          <h3>"App & Web Development"</h3>
-          <i>#WDG25: 13/10/2025 - 20/02/2026</i>
-          <h3>Nagel, Dandy</h3>
+          <ul class="text-sm">
+            <li>#WDG25 - "App & Web Development"</li>
+            <li>13/10/2025 - 20/02/2026</li>
+            <li>Nagel, Dandy</li>
+          </ul>
         </div>
       </section>
     </header>
 
-    <main class="bg-blue-200 flex flex-wrap">
-      <section id="primer" class="bg-gray-100 w-full sm:w-1/2 lg:w-1/3">
-        <h2>Primer</h2>
-        <details>
-          <summary>Windows Nostalgia</summary>
-          <div>
-            <table class="text-sm">
-              <tbody>
-                <tr>
-                  <td>Task:</td>
-                  <td>Create an old WIN screen with HTML and CSS</td>
-                </tr>
-                <tr>
-                  <td>Live-URL:</td>
-                  <td>
-                    <a
-                      href="./WDG-25/Primer/HTML/Windows-nostalgia/index.html"
-                      target="_blank"
-                      >./Primer/HTML/Windows-nostalgia/index.html</a
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <td>Repository:</td>
-                  <td>
-                    <a
-                      href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Primer/HTML/Windows-nostalgia"
-                      target="_blank"
-                      >./Primer/HTML/Windows-nostalgia/</a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </details>
-        <details>
-          <summary>Resume</summary>
-          <div>
-            <table class="text-sm">
-              <tbody>
-                <tr>
-                  <td>Task:</td>
-                  <td>Create a crappy, static resume</td>
-                </tr>
-                <tr>
-                  <td>Live-URL:</td>
-                  <td>
-                    <a
-                      href="./WDG-25/Primer/HTML/Resume/index-semantic-css.html"
-                      target="_blank"
-                      >./Primer/HTML/Resume/index-semantic-css.html</a
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <td>Repository:</td>
-                  <td>
-                    <a
-                      href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Primer/HTML/Resume"
-                      target="_blank"
-                      >./Primer/HTML/Resume/</a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </details>
+    <main class="bg-blue-200">
+      <!-- PROJECTS PART -->
+      <div id="projects-heading" class="w-full bg-slate-400 text-white p-5">
+        <h2>Projects overview</h2>
+      </div>
+      <div id="projects-wrapper" class="flex flex-wrap">
+        <!-- Primer -->
+        <section id="primer" class="bg-gray-100 w-full sm:w-1/2 lg:w-1/3">
+          <h3>Primer</h3>
+          <!-- Windows Nostalgia -->
+          <details>
+            <summary>Windows nostalgia</summary>
+            <div>
+              <table class="text-sm">
+                <tbody>
+                  <tr>
+                    <td>Task:</td>
+                    <td>Create an old WIN screen with HTML and CSS</td>
+                  </tr>
+                  <tr>
+                    <td>Live-URL:</td>
+                    <td>
+                      <a
+                        href="./WDG-25/Primer/HTML/Windows-nostalgia/index.html"
+                        target="_blank"
+                        >./Primer/HTML/Windows-nostalgia/index.html</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Repository:</td>
+                    <td>
+                      <a
+                        href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Primer/HTML/Windows-nostalgia"
+                        target="_blank"
+                        >./Primer/HTML/Windows-nostalgia/</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <!-- Resume -->
+          <details>
+            <summary>Resume</summary>
+            <div>
+              <table class="text-sm">
+                <tbody>
+                  <tr>
+                    <td>Task:</td>
+                    <td>Create a crappy, static resume</td>
+                  </tr>
+                  <tr>
+                    <td>Live-URL:</td>
+                    <td>
+                      <a
+                        href="./WDG-25/Primer/HTML/Resume/index-semantic-css.html"
+                        target="_blank"
+                        >./Primer/HTML/Resume/index-semantic-css.html</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Repository:</td>
+                    <td>
+                      <a
+                        href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Primer/HTML/Resume"
+                        target="_blank"
+                        >./Primer/HTML/Resume/</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <!-- Landingpage -->
+          <details>
+            <summary>Landing page</summary>
+            <div>
+              <table class="text-sm">
+                <tbody>
+                  <tr>
+                    <td>Task:</td>
+                    <td>Create a random landing page</td>
+                  </tr>
+                  <tr>
+                    <td>Live-URL:</td>
+                    <td>
+                      <a
+                        href="./WDG-25/Primer/HTML/Landing-Page/index-semantic-css.html"
+                        target="_blank"
+                        >./Primer/HTML/Landing-Page/index-semantic-css.html</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Repository:</td>
+                    <td>
+                      <a
+                        href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Primer/HTML/Landing-Page"
+                        target="_blank"
+                        >./Primer/HTML/Landing-Page/</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <!-- Multipage website -->
+          <details>
+            <summary>Multipage website</summary>
+            <div>
+              <table class="text-sm">
+                <tbody>
+                  <tr>
+                    <td>Task:</td>
+                    <td>Create a random website with multiple pages</td>
+                  </tr>
+                  <tr>
+                    <td>Live-URL:</td>
+                    <td>
+                      <a
+                        href="./WDG-25/Primer/HTML/Multipage-Website/index-semantic-css.html"
+                        target="_blank"
+                        >./Primer/HTML/Multipage-Website/index-semantic-css.html</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Repository:</td>
+                    <td>
+                      <a
+                        href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Primer/HTML/Multipage-Website"
+                        target="_blank"
+                        >./Primer/HTML/Multipage-Website/</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <!-- Time travel agency -->
+          <details>
+            <summary>Time travel agency</summary>
+            <div>
+              <table class="text-sm">
+                <tbody>
+                  <tr>
+                    <td>Task:</td>
+                    <td>Create a random website for a time travel agency</td>
+                  </tr>
+                  <tr>
+                    <td>Live-URL:</td>
+                    <td>
+                      <a
+                        href="./WDG-25/Primer/HTML/TimeTravelAgency/index.html"
+                        target="_blank"
+                        >./Primer/HTML/TimeTravelAgency/index.html</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Repository:</td>
+                    <td>
+                      <a
+                        href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Primer/HTML/TimeTravelAgency"
+                        target="_blank"
+                        >./Primer/HTML/TimeTravelAgency/</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <!-- Project 1 -->
+          <details class="mt-10">
+            <summary>Project 1 (Abood, me)</summary>
+            <div>
+              <table class="text-sm">
+                <tbody>
+                  <tr>
+                    <td>Task:</td>
+                    <td>
+                      Create a random website, but focus on workflow and using
+                      tools
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Live-URL:</td>
+                    <td>
+                      <a
+                        href="https://abdulaah-alchag.github.io/gruppe-3/"
+                        target="_blank"
+                        >abdulaah-alchag.github.io/gruppe-3/</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Repository:</td>
+                    <td>
+                      <a
+                        href="https://github.com/abdulaah-alchag/gruppe-3"
+                        target="_blank"
+                        >github.com/abdulaah-alchag/gruppe-3</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </section>
 
-        <ul>
-          <li>
-            <a
-              href="WDG-25/Primer/HTML/Landing-Page/index-semantic-css.html"
-              target="_blank"
-              >Landing-Page</a
-            >
-          </li>
-          <li>
-            <a
-              href="WDG-25/Primer/HTML/Multipage-Website/index-semantic-css.html"
-              target="_blank"
-              >Multipage Website</a
-            >
-          </li>
-          <li>
-            <a
-              href="WDG-25/Primer/HTML/TimeTravelAgency/index.html"
-              target="_blank"
-              >Time Travel Agency</a
-            >
-          </li>
-          <li class="pt-5">
-            <a
-              href="https://abdulaah-alchag.github.io/gruppe-3/"
-              target="_blank"
-              >Project 1</a
-            >
-          </li>
-        </ul>
-      </section>
-      <section id="frontend" class="bg-gray-200 w-full sm:w-1/2 lg:w-1/3">
-        <h2>Frontend</h2>
-        <ul>
-          <li>
-            <a
-              href="https://gittyx3b.github.io/wbs-training/WDG-25/Frontend/Tailwind-CSS/index.html"
-              target="_blank"
-              >Tailwind</a
-            >
-          </li>
-          <li class="pt-5">
-            <a href="https://jan-ninh.github.io/news-homepage/" target="_blank"
-              >Project 2</a
-            >
-          </li>
-        </ul>
-      </section>
-      <section id="backend" class="bg-gray-300 w-full sm:w-1/2 lg:w-1/3">
-        <h2>Backend</h2>
-      </section>
+        <!-- Frontend -->
+        <section id="frontend" class="bg-gray-200 w-full sm:w-1/2 lg:w-1/3">
+          <h3>Frontend</h3>
+          <!-- Tailwind Playground -->
+          <details>
+            <summary>Playground Tailwind</summary>
+            <div>
+              <table class="text-sm">
+                <tbody>
+                  <tr>
+                    <td>Task:</td>
+                    <td>Get in touch with tailwind css</td>
+                  </tr>
+                  <tr>
+                    <td>Live-URL:</td>
+                    <td>
+                      <a
+                        href="./WDG-25/Frontend/Tailwind-CSS/index.html"
+                        target="_blank"
+                        >./Frontend/Tailwind-CSS/index.html</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Repository:</td>
+                    <td>
+                      <a
+                        href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Frontend/Tailwind-CSS"
+                        target="_blank"
+                        >./WDG-25/Frontend/Tailwind-CSS</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <!-- Project 2 -->
+          <details class="mt-10">
+            <summary>Project 2 (Monica, Jan, me)</summary>
+            <div>
+              <table class="text-sm">
+                <tbody>
+                  <tr>
+                    <td>Task:</td>
+                    <td>
+                      Create a random website, but focus on workflow and using
+                      tools
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Live-URL:</td>
+                    <td>
+                      <a
+                        href="https://jan-ninh.github.io/news-homepage/"
+                        target="_blank"
+                        >jan-ninh.github.io/news-homepage/</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Repository:</td>
+                    <td>
+                      <a
+                        href="https://github.com/jan-ninh/news-homepage"
+                        target="_blank"
+                        >github.com/jan-ninh/news-homepage</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </section>
+
+        <!-- Backend -->
+        <section id="backend" class="bg-gray-300 w-full sm:w-1/2 lg:w-1/3">
+          <h3>Backend</h3>
+        </section>
+      </div>
     </main>
   </body>
 </html>
