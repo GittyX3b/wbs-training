@@ -48,6 +48,32 @@
           text-shadow: 0px 0px 15px slategray;
         }
       }
+
+      details {
+        padding-bottom: 0.5rem;
+        color: gray;
+        user-select: none;
+
+        summary {
+          cursor: pointer;
+          padding: 3px 10px;
+        }
+        div {
+          width: 100%;
+          padding: 1rem 2rem;
+          border: 3px solid white;
+          border-radius: 10px;
+          background: white;
+
+          table {
+            min-width: 100%;
+            color: gray;
+            font-style: italic;
+
+            /* TODO: td wrap on mobile */
+          }
+        }
+      }
     </style>
   </head>
   <body>
@@ -72,22 +98,74 @@
     <main class="bg-blue-200 flex flex-wrap">
       <section id="primer" class="bg-gray-100 w-full sm:w-1/2 lg:w-1/3">
         <h2>Primer</h2>
+        <details>
+          <summary>Windows Nostalgia</summary>
+          <div>
+            <table class="text-sm">
+              <tbody>
+                <tr>
+                  <td>Task:</td>
+                  <td>Create an old WIN screen with HTML and CSS</td>
+                </tr>
+                <tr>
+                  <td>Live-URL:</td>
+                  <td>
+                    <a
+                      href="./WDG-25/Primer/HTML/Windows-nostalgia/index.html"
+                      target="_blank"
+                      >./Primer/HTML/Windows-nostalgia/index.html</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Repository:</td>
+                  <td>
+                    <a
+                      href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Primer/HTML/Windows-nostalgia"
+                      target="_blank"
+                      >./Primer/HTML/Windows-nostalgia/</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary>Resume</summary>
+          <div>
+            <table class="text-sm">
+              <tbody>
+                <tr>
+                  <td>Task:</td>
+                  <td>Create a crappy, static resume</td>
+                </tr>
+                <tr>
+                  <td>Live-URL:</td>
+                  <td>
+                    <a
+                      href="./WDG-25/Primer/HTML/Resume/index-semantic-css.html"
+                      target="_blank"
+                      >./Primer/HTML/Resume/index-semantic-css.html</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Repository:</td>
+                  <td>
+                    <a
+                      href="https://github.com/GittyX3b/wbs-training/tree/main/WDG-25/Primer/HTML/Resume"
+                      target="_blank"
+                      >./Primer/HTML/Resume/</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
 
         <ul>
-          <li>
-            <a
-              href="WDG-25/Primer/HTML/Windows-nostalgia/index.html"
-              target="_blank"
-              >Windows Nostalgia</a
-            >
-          </li>
-          <li>
-            <a
-              href="WDG-25/Primer/HTML/Resume/index-semantic-css.html"
-              target="_blank"
-              >Resume</a
-            >
-          </li>
           <li>
             <a
               href="WDG-25/Primer/HTML/Landing-Page/index-semantic-css.html"
