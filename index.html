@@ -7,6 +7,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
+      @theme {
+        --color-wbsred: #f8495e;
+      }
+
       html,
       body,
       header,
@@ -19,8 +23,7 @@
         flex-shrink: 1;
       }
 
-      header,
-      section {
+      main section {
         padding-top: min(4rem, 10%);
         padding-bottom: min(5rem, 14%);
         padding-inline: min(3rem, 10%);
@@ -48,9 +51,21 @@
     </style>
   </head>
   <body>
-    <header class="p-15">
-      <section id="title" class="bg-red">
-        <h1>GittyX3b - Overview</h1>
+    <header class="">
+      <section id="title" class="flex flex-wrap items-stretch justify-start">
+        <div class="bg-[#f8495e] w-full sm:w-1/6 h-[5rem] sm:h-[12rem] p-3">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4D0BAQHRVFqKY5mj7A/company-logo_200_200/company-logo_200_200/0/1709018045816/wbs_coding_school_logo?e=2147483647&v=beta&t=BSzbJ0J65S8VCuTvTJoobA1ogftD29hb2zChRCuobNI"
+            alt="https://www.wbscodingschool.com/wp-content/uploads/2023/10/standard_colour_cutout_text_icon.png"
+            class="h-full object-cover rounded-[50%]"
+          />
+        </div>
+        <div class="px-10 py-10 sm:py-2">
+          <h1 class="font-bold">WBS Coding Bootcamp</h1>
+          <h3>"App & Web Development"</h3>
+          <i>#WDG25: 13/10/2025 - 20/02/2026</i>
+          <h3>Nagel, Dandy</h3>
+        </div>
       </section>
     </header>
 
