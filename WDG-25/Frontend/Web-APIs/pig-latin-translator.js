@@ -14,6 +14,8 @@ REQUIREMENTS:
 [x] program should translate englisch text to pig latin
 [x] program should get the english text as input from process.argv
 [x] Output the translation to the console
+
+FUNCTION CALL: node pig-latin-translator.js ["some text to translate"]
   
 */
 
