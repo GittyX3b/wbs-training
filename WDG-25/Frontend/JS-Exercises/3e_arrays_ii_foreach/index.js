@@ -6,14 +6,10 @@ numbers.forEach((x) => console.log(x));
 
 // Calculating the sum
 let sum = 0;
-numbers.forEach((x, i) => {
-  sum = sum + x;
-  if (i === numbers.length - 1) console.log(`Summe: ${sum}`);
-});
+numbers.forEach((x) => (sum += x));
+console.log(`Summe 2: ${sum}`);
 
 // Array with squared values
 const squaredNumbers = [];
-numbers.forEach((x, i) => {
-  squaredNumbers[i] = x * x;
-  i === numbers.length - 1 ? console.log("Squared: " + squaredNumbers) : null;
-});
+numbers.forEach((x) => squaredNumbers.push(x * x));
+console.log(`Squarred: ${squaredNumbers}`);

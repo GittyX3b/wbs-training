@@ -3,8 +3,7 @@ const numbers = [5, 10, 15, 20, 25, 30];
 console.log(`Original: ${numbers}`);
 
 // New array with numbers gt 15
-const numbersGreaterThan15 = [];
-numbers.filter((x) => (x > 15 ? numbersGreaterThan15.push(x) : null));
+const numbersGreaterThan15 = numbers.filter((x) => (x > 15 ? x : null));
 console.log(`GreaterThan15: ${numbersGreaterThan15}`);
 
 // Array of objects
