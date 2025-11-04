@@ -15,6 +15,8 @@ REQUIREMENTS:
 [x] Determine the result based on the rules of Rock Paper Scissors
 [x] Output the result (win, lose, or draw) to the console
 
+FUNCTION CALL: node rock-paper-scissors.js [rock||paper||scissor]
+
 */
 
 // START <================================================================
