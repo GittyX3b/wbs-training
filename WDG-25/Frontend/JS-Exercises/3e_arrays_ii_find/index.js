@@ -4,7 +4,7 @@ console.log(`Original: ${numbers}`);
 
 // First number > 25
 const gt = numbers.find((num) => num > 25);
-console.log(`Greater than 25: ${gt}`);
+console.log(`First num greater than 25: ${gt}`);
 
 // Locate a person
 const people = [

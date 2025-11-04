@@ -16,5 +16,5 @@ const students = [
   { name: "David", age: 20, passed: true },
 ];
 
-console.log(students.some((p) => p.passed === false));
+console.log(students.some((p) => !p.passed));
 console.log(students.every((p) => p.age > 18));
