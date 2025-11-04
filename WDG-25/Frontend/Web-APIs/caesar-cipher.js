@@ -15,7 +15,7 @@ REQUIREMENTS:
 [x] Case insensitive
 [x] a negative shift number means shifts to the left
 [x] a positive shift number means shifts to the right
-[ ] Output the encrypted phrase to the console
+[x] Output the encrypted phrase to the console
 
 FUNCTION CALL: node caesar-cipher.js ["some text to encrypt"] [shiftNumber]
 
