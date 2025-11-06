@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Landing Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="#" class="text-xl font-bold text-gray-800">MyWebsite</a>
+        <div>
+          <a href="#about" class="text-gray-800 hover:text-blue-500 mx-2"
+            >About</a
+          >
+          <a href="#services" class="text-gray-800 hover:text-blue-500 mx-2"
+            >Services</a
+          >
+          <a href="#contact" class="text-gray-800 hover:text-blue-500 mx-2"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold text-gray-800">Resize the preview</h1>
+        <p id="window-width" class="text-gray-600 mt-4">??</p>
+        <img
+          src="https://placehold.co/800x400"
+          alt="Hero Image"
+          class="mx-auto mt-8 rounded-lg shadow-md"
+        />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-gray-800">About Us</h2>
+            <p class="text-gray-600 mt-4">
+              Click on the image below to get a surprise :D
+            </p>
+          </div>
+          <div class="md:w-1/2 mt-8 md:mt-0">
+            <img
+              id="about-img"
+              src="https://placehold.co/400x300"
+              alt="About Image"
+              class="rounded-lg shadow-md cursor-pointer"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-gray-800">Our Services</h2>
+        <p class="text-gray-600 mt-4">
+          We offer a variety of services to cater to your needs.
+        </p>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+            <img
+              src="https://placehold.co/150"
+              alt="Service 1"
+              class="mx-auto rounded-full"
+            />
+            <h3 class="text-xl font-bold text-gray-800 mt-4">Service One</h3>
+            <p class="text-gray-600 mt-2">Description of service one.</p>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+            <img
+              src="https://placehold.co/150"
+              alt="Service 2"
+              class="mx-auto rounded-full"
+            />
+            <h3 class="text-xl font-bold text-gray-800 mt-4">Service Two</h3>
+            <p class="text-gray-600 mt-2">Description of service two.</p>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+            <img
+              src="https://placehold.co/150"
+              alt="Service 3"
+              class="mx-auto rounded-full"
+            />
+            <h3 class="text-xl font-bold text-gray-800 mt-4">Service Three</h3>
+            <p class="text-gray-600 mt-2">Description of service three.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
+        <p class="text-gray-600 mt-4 text-center">Try to submit the form</p>
+        <div class="mt-8 max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+          <form>
+            <div class="mb-4">
+              <label for="name" class="block text-gray-700">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block text-gray-700">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
