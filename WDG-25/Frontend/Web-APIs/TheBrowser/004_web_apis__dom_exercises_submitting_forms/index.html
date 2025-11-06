@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submitting Forms</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="m-6 max-w-md mx-auto bg-white p-6 rounded shadow">
+      <h1 class="text-xl font-bold mb-4">Contact Form</h1>
+      <form id="contact-form" class="space-y-4" method="dialog">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700"
+            >Name</label
+          >
+          <input
+            type="text"
+            id="name"
+            class="mt-1 block w-full border border-gray-300 rounded px-3 py-2"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            class="mt-1 block w-full border border-gray-300 rounded px-3 py-2"
+          />
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700"
+            >Message</label
+          >
+          <textarea
+            id="message"
+            rows="4"
+            class="mt-1 block w-full border border-gray-300 rounded px-3 py-2"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+        >
+          Submit
+        </button>
+      </form>
+
+      <p id="output" class="mt-4 p-4 rounded text-white font-semibold"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
