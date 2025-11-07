@@ -26,9 +26,11 @@ btnSubmit.addEventListener("mouseup", (e) => {
   let error = [];
 
   // check if form fields empty
-  !isEmpty(iName) ? out.push(iName.value) : error.push("no name");
-  !isEmpty(iEmail) ? out.push(iEmail.value) : error.push("no email");
-  !isEmpty(iMessage) ? out.push(iMessage.value) : error.push("no message");
+  !isEmpty(iName) ? out.push(iName.value.trim()) : error.push("no name");
+  !isEmpty(iEmail) ? out.push(iEmail.value.trim()) : error.push("no email");
+  !isEmpty(iMessage)
+    ? out.push(iMessage.value.trim())
+    : error.push("no message");
 
   resetParagraph();
 
