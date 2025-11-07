@@ -41,6 +41,7 @@ btnAdd.addEventListener("mouseup", () => {
   if (tempTask) {
     tempItem.textContent = tempTask;
     ul.append(tempItem);
+    tempItem.scrollIntoView({ behavior: "smooth" });
   } else {
     alert("task array empty");
   }
