@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script.js" type="module"></script>
+    <title>Fetch API</title>
+  </head>
+
+  <body
+    class="text-shadow flex h-screen flex-col items-center gap-10 bg-linear-90 from-purple-800 to-indigo-950 p-10 font-mono text-white text-shadow-indigo-950"
+  >
+    <h1>Fetching!</h1>
+
+    <!-- Comic -->
+    <div class="flex flex-col items-center gap-14">
+      <article id="comic-container" class="hidden h-96 content-center">
+        <figure class="h-full">
+          <img id="comic-image" class="h-full w-full" src="" alt="" />
+          <figcaption class="flex justify-between contain-inline-size">
+            <span id="comic-title"></span>
+            <time id="comic-date" datetime=""></time>
+          </figcaption>
+        </figure>
+      </article>
+      <button
+        id="get-comic"
+        class="cursor-pointer rounded bg-linear-0 from-indigo-950 to-purple-900 px-3 py-2 disabled:cursor-default disabled:grayscale-70"
+      >
+        <span
+          class="rounded-full bg-linear-0 from-purple-900 to-indigo-950 px-2 py-1"
+          >Get Comic!</span
+        >
+      </button>
+    </div>
+  </body>
+</html>
