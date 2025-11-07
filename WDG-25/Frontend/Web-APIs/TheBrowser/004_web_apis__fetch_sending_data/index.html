@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="container mt-5 mx-auto">
+      <div class="bg-white p-5 rounded-lg shadow-md w-full">
+        <h1 class="text-2xl text-center font-bold text-gray-800 mb-4">
+          Todo List
+        </h1>
+        <form id="todo-form" class="mb-4">
+          <input
+            id="new-todo"
+            type="text"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Add a new task"
+          />
+          <button
+            type="submit"
+            class="mt-2 w-full bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Add Task
+          </button>
+        </form>
+        <ul id="todo-list" class="list-disc list-inside"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
