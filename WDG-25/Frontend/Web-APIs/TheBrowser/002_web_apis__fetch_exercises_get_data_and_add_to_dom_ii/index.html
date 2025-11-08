@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pok�mon Cards</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      /* TODO: reorganize styling */
+      card {
+        background: lightgrey;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mx-auto p-4">
+      <h1 class="text-3xl font-bold mb-4">Pokémon Cards</h1>
+      <nav class="mb-5">
+        <form id="card-control-form" class="">
+          <fieldset class="border-1 p-2">
+            <legend>Card Controller</legend>
+            <div id="ctrl-offset" class="bg-green-200">
+              <label for="ctrl-offset-counter">Offset</label>
+              <div id="ctrl-offset-counter">
+                <button
+                  id="offset-counter-up"
+                  class="p-1 bg-zinc-500 cursor-pointer"
+                >
+                  +
+                </button>
+                <span id="offset-counter">value data offset</span>
+                <button
+                  id="offset-counter-dwn"
+                  class="p-1 bg-zinc-500 cursor-pointer"
+                >
+                  -
+                </button>
+              </div>
+            </div>
+            <div id="ctrl-limit" class="bg-blue-200">
+              <label for="ctrl-limit-counter">Limit</label>
+              <div id="ctrl-limit-counter" class="">
+                <button
+                  id="limit-counter-up"
+                  class="p-1 bg-zinc-500 cursor-pointer"
+                >
+                  +
+                </button>
+                <span id="limit-counter">value data limit</span>
+                <button
+                  id="limit-counter-dwn"
+                  class="p-1 bg-zinc-500 cursor-pointer"
+                >
+                  -
+                </button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </nav>
+      <div
+        id="pokemon-container"
+        class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-4"
+      >
+        <!-- Pok�mon cards will be populated here -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
