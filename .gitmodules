@@ -3,11 +3,6 @@
 	url = git@github.com:WDG-025/Primer.git
 	branch = main
 	ignore = dirty
-[submodule "WDG-25/Primer/Renke-Git-Intro"]
-	path = WDG-25/Primer/Renke-Git-Intro
-	url = git@github.com:ReynkeDeVos/WDG25-git-intro.git
-	branch = main
-	ignore = dirty
 [submodule "WDG-25/Primer/Project1"]
 	path = WDG-25/Primer/Project1
 	url = https://github.com/abdulaah-alchag/gruppe-3
