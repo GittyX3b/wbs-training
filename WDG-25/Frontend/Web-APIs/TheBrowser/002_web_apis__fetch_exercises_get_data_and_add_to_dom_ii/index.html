@@ -7,17 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pok�mon Cards</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-      /* TODO: reorganize styling */
-      card {
-        background: lightgrey;
-        padding: 1rem;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <div class="container mx-auto p-4">
-      <h1 class="text-3xl font-bold mb-4">Pokémon Cards</h1>
+    <div class="container mx-auto p-4 select-none">
+      <h1 class="text-3xl font-bold mb-4">
+        Pokémon Cards [<span id="header-counter"></span>]
+      </h1>
       <nav class="mb-5">
         <form id="card-control-form" class="">
           <fieldset class="border-1 p-2">
@@ -25,37 +21,34 @@
             <div id="ctrl-offset" class="bg-green-200">
               <label for="ctrl-offset-counter">Offset</label>
               <div id="ctrl-offset-counter">
-                <button
+                <a
                   id="offset-counter-up"
                   class="p-1 bg-zinc-500 cursor-pointer"
                 >
                   +
-                </button>
+                </a>
                 <span id="offset-counter">value data offset</span>
-                <button
+                <a
                   id="offset-counter-dwn"
                   class="p-1 bg-zinc-500 cursor-pointer"
                 >
                   -
-                </button>
+                </a>
               </div>
             </div>
             <div id="ctrl-limit" class="bg-blue-200">
               <label for="ctrl-limit-counter">Limit</label>
               <div id="ctrl-limit-counter" class="">
-                <button
-                  id="limit-counter-up"
-                  class="p-1 bg-zinc-500 cursor-pointer"
-                >
+                <a id="limit-counter-up" class="p-1 bg-zinc-500 cursor-pointer">
                   +
-                </button>
+                </a>
                 <span id="limit-counter">value data limit</span>
-                <button
+                <a
                   id="limit-counter-dwn"
                   class="p-1 bg-zinc-500 cursor-pointer"
                 >
                   -
-                </button>
+                </a>
               </div>
             </div>
           </fieldset>
