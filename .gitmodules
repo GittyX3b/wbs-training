@@ -1,20 +1,16 @@
-[submodule "WDG-25/Primer/WBS-Primer"]
-	path = WDG-25/Primer/WBS-Primer
+[submodule "WDG-25/1_Primer/WBS-Repo_Primer"]
+	path = WDG-25/1_Primer/WBS-Repo_Primer
 	url = git@github.com:WDG-025/Primer.git
 	branch = main
-	ignore = dirty
-[submodule "WDG-25/Primer/Project1"]
-	path = WDG-25/Primer/Project1
-	url = https://github.com/abdulaah-alchag/gruppe-3
+[submodule "WDG-25/1_Primer/Project_1"]
+	path = WDG-25/1_Primer/Project_1
+	url = git@github.com:abdulaah-alchag/gruppe-3.git
 	branch = main
-	ignore = dirty
-[submodule "WDG-25/Frontend/WBS-Frontend"]
-	path = WDG-25/Frontend/WBS-Frontend
+[submodule "WDG-25/2_Frontend/WBS-Repo_Frontend"]
+	path = WDG-25/2_Frontend/WBS-Repo_Frontend
 	url = git@github.com:WDG-025/Frontend.git
 	branch = main
-	ignore = dirty
-[submodule "WDG-25/Frontend/Project2"]
-	path = WDG-25/Frontend/Project2
+[submodule "WDG-25/2_Frontend/2_Web-APIs/Project_2"]
+	path = WDG-25/2_Frontend/2_Web-APIs/Project_2
 	url = git@github.com:jan-ninh/news-homepage.git
 	branch = main
-	ignore = dirty
