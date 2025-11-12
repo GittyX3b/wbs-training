@@ -14,3 +14,7 @@
 	path = WDG-25/2_Frontend/2_Web-APIs/Project_2
 	url = git@github.com:jan-ninh/news-homepage.git
 	branch = main
+[submodule "WDG-25/2_Frontend/3_JS-Modules/Project_3"]
+	path = WDG-25/2_Frontend/3_JS-Modules/Project_3
+	url = git@github.com:simasso/PokedexDiary.git
+	branch = main
