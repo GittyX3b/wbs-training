@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Storage API Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer components {
+            .buttons-container {
+              @apply flex flex-wrap gap-2 items-center justify-center;
+            }
+            .btn {
+             @apply px-4 py-2 text-white rounded;
+            }
+          }
+    </style>
+  </head>
+  <body>
+    <div class="container mx-auto mt-5">
+      <div class="buttons-container">
+        <button id="saveString" class="btn bg-blue-500">
+          Save String to LocalStorage
+        </button>
+        <button id="saveArray" class="btn bg-green-500">
+          Save Array to LocalStorage
+        </button>
+        <button id="logStorage" class="btn bg-purple-500">
+          Log LocalStorage to Console
+        </button>
+        <button id="removeItem" class="btn bg-pink-500">Remove Item</button>
+        <button id="clearStorage" class="btn bg-gray-500">Clear all</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

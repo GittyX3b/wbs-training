@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling Exercise</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer components{
+          .btn {
+            @apply px-4 py-2 text-white rounded;
+          }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container mx-auto mt-5">
+      <button
+        id="add-item-localstorage"
+        class="btn bg-blue-500 hover:bg-blue-400"
+      >
+        Add item to LocalStorage
+      </button>
+      <ul
+        id="item-list1"
+        class="mt-4 w-full max-w-md h-40 overflow-y-scroll bg-white shadow-md rounded p-4"
+      ></ul>
+      <button
+        id="add-item-sessionstorage"
+        class="btn mt-5 bg-red-500 hover:bg-red-400"
+      >
+        Add item to SessionStorage
+      </button>
+      <ul
+        id="item-list2"
+        class="mt-4 w-full max-w-md h-40 overflow-y-scroll bg-white shadow-md rounded p-4"
+      ></ul>
+      <button
+        id="reload"
+        class="mt-5 px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded"
+      >
+        Reload
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
