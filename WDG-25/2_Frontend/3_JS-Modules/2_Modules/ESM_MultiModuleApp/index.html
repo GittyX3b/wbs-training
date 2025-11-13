@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS EMS - MultiModules LandingPage</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="module" src="./modules/network.js"></script>
+    <script type="module" src="./modules/storage.js"></script>
+    <script type="module" src="./modules/ui.js"></script>
+    <script type="module" src="./index.js" defer></script>
+  </head>
+  <body class="w-full bg-red-200">
+    <header class="w-full bg-blue-200">header of EMS MMA index.html</header>
+    <main class="w-full bg-yellow-200">main</main>
+    <footer class="w-full bg-green-200">footer</footer>
+  </body>
+</html>
