@@ -1,9 +1,21 @@
 // Functions related to fetching data from the API
 
-function sanityCheck() {
-  console.log("network.js ok");
-}
+import { STORAGE } from "./variables.js";
+import { getStorage } from "./storage.js";
+import ui from "./ui.js";
 
-export default {
-  sanityCheck,
-};
+const baseURL = "https://fakestoreapi.com/products";
+
+(() => {
+  try {
+    fetch(baseURL)
+      .then((res) => res.json())
+      .then((data) => {
+        getStorage(STORAGE.key);
+        ui.renderSite(data);
+      })
+      .catch(console.error);
+  } catch (error) {
+    console.log(error);
+  }
+})();

@@ -34,7 +34,7 @@ Welcome to this exercise! Today, you’ll build a simple e-commerce landing page
 
 **4.Write Main Logic in index.js:**
 
-[x] Import the functions from the modules
+[ ] Import the functions from the modules
 
 [ ] Call these functions to fetch products and handle user interactions.
 
