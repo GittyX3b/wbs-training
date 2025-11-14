@@ -13,7 +13,7 @@ const baseURL = "https://fakestoreapi.com/products";
       .then((data) => {
         // TODO: check storage on load -> display cart counter if given
         ui.sortProducts(data);
-        ui.renderSite(data);
+        ui.renderCategories();
       })
       .catch(console.error);
   } catch (error) {
