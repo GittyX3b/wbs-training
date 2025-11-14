@@ -1,6 +1,8 @@
 // only var declarations
 
+const PRODUCTS = {};
+
 export const STORAGE = {
-  key: "MuMoApp", // keyword for localStorage
-  data: null,
+  key: "MuMoApp", // key for localStorage
+  data: null, // data from localStorage
 };
