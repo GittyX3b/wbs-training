@@ -11,7 +11,8 @@ const baseURL = "https://fakestoreapi.com/products";
     fetch(baseURL)
       .then((res) => res.json())
       .then((data) => {
-        // TODO: check storage on load -> display cart counter if given
+        getStorage();
+        ui.refreshCartCounter();
         ui.sortProducts(data);
         ui.renderCategories();
       })

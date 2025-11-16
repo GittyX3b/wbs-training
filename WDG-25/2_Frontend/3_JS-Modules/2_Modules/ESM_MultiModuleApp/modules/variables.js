@@ -1,15 +1,17 @@
-// only var declarations
+// VAR DECLARATIONS ============================
 
 export const PRODUCTS = {};
 
 export const STORAGE = {
   key: "MuMoApp", // key for localStorage
-  data: null, // data from localStorage
+  cartArray: [], // stored product id's
 };
 
-// DOM
+// DOM REFFERENCES ==============================
+const cartCounter = document.querySelector("#cart-counter");
 const main = document.querySelector("main");
 
 export default {
+  cartCounter,
   main,
 };

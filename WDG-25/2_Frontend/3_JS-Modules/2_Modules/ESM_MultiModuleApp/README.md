@@ -2,15 +2,15 @@ Welcome to this exercise! Today, you’ll build a simple e-commerce landing page
 
 # Goal:
 
-[ ] 1.Create a Landing Page: Style it with TailwindCSS.
+[x] 1.Create a Landing Page: Style it with TailwindCSS.
 
-[ ] 2.Fetch Products: On page load, fetch products from https://fakestoreapi.com/products.
+[x] 2.Fetch Products: On page load, fetch products from https://fakestoreapi.com/products.
 
-[ ] 3.Check the docs here: https://fakestoreapi.com/docs
+[x] 3.Check the docs here: https://fakestoreapi.com/docs
 
-[ ] 4.Display Products: Show the products as cards.
+[x] 4.Display Products: Show the products as cards.
 
-[ ] 5.Add to Cart: Each card should have a button to add the product to the cart. The cart is an array stored in localStorage.
+[x] 5.Add to Cart: Each card should have a button to add the product to the cart. The cart is an array stored in localStorage.
 
 # Instructions
 
@@ -34,8 +34,8 @@ Welcome to this exercise! Today, you’ll build a simple e-commerce landing page
 
 **4.Write Main Logic in index.js:**
 
-[ ] Import the functions from the modules
+[x] Import the functions from the modules
 
-[ ] Call these functions to fetch products and handle user interactions.
+[x] Call these functions to fetch products and handle user interactions.
 
 This setup will help you practice using ES Modules, interacting with APIs, manipulating the DOM, and using localStorage. Good luck and happy coding!

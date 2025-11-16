@@ -13,41 +13,69 @@
     <script type="module" src="./index.js" defer></script>
 
     <style type="text/tailwindcss">
+      @layer utilities {
+        .btn {
+          display: block;
+          width: 100%;
+          font-weight: bold;
+          cursor: pointer;
+        }
 
-    @layer utilities {
-      .product {
-        background: red;
-        height: 200px;
+        .btn-buy {
+          padding: 10px 20px;
+          background: forestgreen;
+          color: white;
+        }
+
+        .btn-buy::after {
+          content: " add to cart";
+        }
+        .btn-remove {
+          padding: 10px 20px;
+          background: deepskyblue;
+          color: white;
+          font-style: italic;
+        }
+
+        .btn-remove::after {
+          content: "remove from cart";
+        }
       }
-    }
-  </style>
-
+    </style>
   </head>
-  <body class="bg-red-200 min-h-screen grid grid-rows-[auto_1fr_auto] max-w-[1600px] mx-auto">
+  <body
+    class="min-h-screen grid grid-rows-[auto_1fr_auto] max-w-[1600px] mx-auto"
+  >
     <!-- HEADER -->
-    <header class="bg-blue-200 h-[3.75rem] flex justify-between items-center sticky top-0 z-10">
-        <div id="site-logo" class="border-1">LOGO</div>
-        <div id="cart-container" class="flex gap-3  border-1">
-          <div id="cart-icon">cart</div>
-          <div id="cart-counter">0</div>
-        </div>        
+    <header
+      class="bg-blue-200 flex justify-between items-center sticky top-0 z-10 px-10 py-4 shadow border-b-1 border-b-zinc-300"
+    >
+      <div id="site-logo" class="text-2xl font-bold">AMAZING</div>
+      <div
+        id="cart-container"
+        class="flex gap-3 border-1 border-zinc-300 bg-zinc-100 p-2 px-5 rounded"
+      >
+        <div id="cart-icon">cart</div>
+        <div id="cart-counter">0</div>
       </div>
     </header>
     <!-- MAIN -->
-    <main class="bg-yellow-200">
+    <main class="bg-white">
       <!-- TEMPLATE
       <section class="category-container" product-category="men's clothing"> 
           <h2 class="category-heading capitalize">Men's clothing</h2>
           <div class="product-container">
             <article id="item.id" class="product-card">
               <img src="item.image" alt="item.title"/>
-              // TODO: continue cards in ui.applyCard()
+              // TODO: continue missing elements here
             </article>
           </div>
         </section> 
         -->
     </main>
     <!-- FOOTER -->
-    <footer class="bg-green-200 h-[7.5rem] flex justify-center items-center ">footer</footer>
+    <footer class="bg-green-200 h-[7.5rem] flex justify-center items-center">
+      footer
+    </footer>
   </body>
 </html>
