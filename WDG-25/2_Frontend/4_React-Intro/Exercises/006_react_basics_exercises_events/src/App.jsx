@@ -19,8 +19,20 @@ const handleSubmit = (e) => {
     errors.push("<li>users older than 120 years are not allowed</li>");
   if (!userColor) errors.push("<li>no favorite color chosen</li>");
 
+  console.log(errors);
+
   const err = document.querySelector("#error-messages");
-  err.innerHTML = errors.join("");
+  if (errors.length > 0) {
+    err.innerHTML = errors.join("");
+  } else {
+    err.innerHTML = "";
+    console.log({
+      name: userName,
+      age: userAge,
+      color: userColor,
+      rem: userRem,
+    });
+  }
 };
 
 const App = () => (
