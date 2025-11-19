@@ -10,18 +10,18 @@ const handleSubmit = (e) => {
   const userRem = data.get("userRecomend") ? "yes" : "no";
 
   errors = [];
-  if (!userName) errors.push("no username given");
+  if (!userName) errors.push("<li>no username given</li>");
   if (userName.length <= 2)
-    errors.push("username should have at least 2 chars");
-  if (!userAge) errors.push("no userage given");
-  if (userAge < 5) errors.push("user have tob at least 5 years old");
-  if (userAge > 120) errors.push("users older than 120 years are not allowed");
-  if (!userColor) errors.push("no favorite color chosen");
+    errors.push("<li>username should have at least 2 chars</li>");
+  if (!userAge) errors.push("<li>no userage given</li>");
+  if (userAge < 5) errors.push("<li>user have tob at least 5 years old</li>");
+  if (userAge > 120)
+    errors.push("<li>users older than 120 years are not allowed</li>");
+  if (!userColor) errors.push("<li>no favorite color chosen</li>");
 
-  // console.log("Form submitted", errors);
+  const err = document.querySelector("#error-messages");
+  err.innerHTML = errors.join("");
 };
-
-// TODO: display Errors
 
 const App = () => (
   <form
@@ -60,6 +60,11 @@ const App = () => (
       Recommend?
     </label>
     <input type="checkbox" name="userRecomend" id="userRecomend" />
+
+    <ul
+      id="error-messages"
+      className="bg-white pl-6 text-red-400 list-disc text-xs rounded-2xl"
+    ></ul>
 
     <button className="bg-green-400 rounded shadow">Submit</button>
   </form>
