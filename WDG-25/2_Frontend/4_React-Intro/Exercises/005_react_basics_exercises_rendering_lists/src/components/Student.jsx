@@ -19,6 +19,6 @@ export const Student = ({
     <img src={img} className="w-full p-1" />
     <p>Course: {course}</p>
     <p>City: {city}</p>
-    <p>Alumni: {graduate ? "Yes" : "No"}</p>
+    <p>Alumnus: {graduate ? "Yes" : "No"}</p>
   </article>
 );
