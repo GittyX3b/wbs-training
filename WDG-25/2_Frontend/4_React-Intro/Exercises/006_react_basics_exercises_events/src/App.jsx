@@ -6,7 +6,7 @@ const handleSubmit = (e) => {
   const data = new FormData(e.target);
   const userName = data.get("userName").trim();
   const userAge = data.get("userAge").trim();
-  const userColor = data.get("userColor").trim();
+  const userColor = data.get("userColor");
   const userRem = data.get("userRecomend") ? "yes" : "no";
 
   errors = [];
@@ -18,8 +18,6 @@ const handleSubmit = (e) => {
   if (userAge > 120)
     errors.push("<li>users older than 120 years are not allowed</li>");
   if (!userColor) errors.push("<li>no favorite color chosen</li>");
-
-  console.log(errors);
 
   const err = document.querySelector("#error-messages");
   if (errors.length > 0) {
@@ -53,20 +51,19 @@ const App = () => (
     <label htmlFor="userColor" className="-mb-6">
       Color:
     </label>
-    <input
-      type="text"
+    <select
       id="userColor"
       name="userColor"
-      list="color-list"
       className="bg-zinc-100"
-    />
-    <datalist id="color-list">
-      <option value="rot" />
-      <option value="grün" />
-      <option value="gelb" />
-      <option value="blau" />
-      <option value="pink" />
-    </datalist>
+      defaultValue=""
+    >
+      <option value="" disabled></option>
+      <option value="rot">rot</option>
+      <option value="grün">grün</option>
+      <option value="gelb">gelb</option>
+      <option value="blau">blau</option>
+      <option value="pink">pink</option>
+    </select>
 
     <label htmlFor="userRecomend" className="-mb-6">
       Recommend?
