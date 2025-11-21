@@ -1,1 +1,21 @@
-/* Your CSS here */
+.counter {
+  background: orange;
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-block: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  button {
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  span {
+    font-size: 2rem;
+    font-style: bolder;
+  }
+}

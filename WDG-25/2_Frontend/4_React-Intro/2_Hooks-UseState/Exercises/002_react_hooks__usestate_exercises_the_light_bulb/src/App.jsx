@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./index.css";
 
-const LightBulb = ({ isOn, counter, blocked }) => {
+const LightBulb = ({ isOn, counter }) => {
   return (
-    <div className={isOn && !blocked ? "container night" : "container"}>
+    <div className={isOn ? "container night" : "container"}>
       <div className="bulb-light">
         <div id="light" />
         <div id="bulb">
@@ -56,7 +56,7 @@ const App = () => {
         {!isLocked ? (x ? "OFF" : "ON") : "LOCKED"}
       </button>
       <button onClick={handleReset}>RESET</button>
-      <LightBulb isOn={x} counter={nr} blocked={isLocked} />
+      <LightBulb isOn={x} counter={nr} />
     </>
   );
 };
