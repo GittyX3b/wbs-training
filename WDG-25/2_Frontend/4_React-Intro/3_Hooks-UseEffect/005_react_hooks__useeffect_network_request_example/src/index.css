@@ -1,0 +1,4 @@
+/* 
+At the time of writing, TailwindCSS' last major version is 4, however, it only offers a JS script on a CDN instead of a precompiled CSS file, for this reason, we are using TailwindCSS v2's CDN for these examples 
+*/
+@import "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
