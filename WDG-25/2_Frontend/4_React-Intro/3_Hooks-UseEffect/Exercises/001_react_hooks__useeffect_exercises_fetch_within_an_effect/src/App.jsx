@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <div className="items- flex min-h-screen justify-center bg-red-200">
-      <div className="flex max-w-[1800px] flex-col bg-green-200">
+      <div className="flex w-[1000px] flex-col bg-green-200">
         <h1 className="flex justify-center bg-yellow-200 p-10 text-[4rem] font-bold">
           Star Wars
         </h1>
@@ -54,20 +54,26 @@ const App = () => {
         {status === "success" && (
           <div>
             <div className="m-auto grid w-[50%] grid-cols-2 gap-5">
-              <button
-                className="grow cursor-pointer rounded border border-white bg-blue-500 py-3 font-bold text-white shadow hover:bg-blue-500"
-                onClick={handlePageSwitch}
-                direction="previous"
-              >
-                previous
-              </button>
-              <button
-                className="grow cursor-pointer rounded border border-white bg-blue-500 py-3 font-bold text-white shadow hover:bg-blue-500"
-                onClick={handlePageSwitch}
-                direction="next"
-              >
-                next
-              </button>
+              {data.previous ? (
+                <button
+                  className="grow cursor-pointer rounded border border-white bg-blue-500 py-3 font-bold text-white shadow hover:bg-blue-500"
+                  onClick={handlePageSwitch}
+                  direction="previous"
+                >
+                  previous
+                </button>
+              ) : (
+                <div></div>
+              )}
+              {data.next && (
+                <button
+                  className="grow cursor-pointer rounded border border-white bg-blue-500 py-3 font-bold text-white shadow hover:bg-blue-500"
+                  onClick={handlePageSwitch}
+                  direction="next"
+                >
+                  next
+                </button>
+              )}
             </div>
 
             <div className="flex flex-wrap justify-center gap-5 p-10">
