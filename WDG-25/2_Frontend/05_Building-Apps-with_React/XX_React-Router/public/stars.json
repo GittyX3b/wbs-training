@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "heading": "Crab Nebula",
+    "slug": "crab-nebula",
+    "url": "https://stsci-opo.org/STScI-01HBBMDW8B4A90QZ64RGQJHRV1.png",
+    "description": "NASA's James Webb Space Telescope has gazed at the Crab Nebula in the search for answers about the supernova remnant's origins. Webb's NIRCam (Near-Infrared Camera) and MIRI (Mid-Infrared Instrument) have revealed new details in infrared light.",
+    "featured": false
+  },
+  {
+    "id": 2,
+    "heading": "HH 211",
+    "slug": "hh-211",
+    "url": "https://stsci-opo.org/STScI-01H9NWHWKBM3DM6PQQPZDSVY7Y.png",
+    "description": "Molecules excited by the turbulent conditions, including molecular hydrogen, carbon monoxide and silicon monoxide, emit infrared light, collected by Webb, that map out the structure of the outflows.",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "heading": "NGC 346",
+    "slug": "ngc-346",
+    "url": "https://stsci-opo.org/STScI-01HBVHYACKXBP5Y9R50MAEQYKR.png",
+    "description": "Bright patches and filaments mark areas with abundant numbers of protostars. This image includes 7.7-micron light shown in blue, 10 microns in cyan, 11.3 microns in green, 15 microns in yellow, and 21 microns in red.",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "heading": "Ring Nebula",
+    "slug": "ring-nebula",
+    "url": "https://stsci-opo.org/STScI-01H82G1P61JMNCENZ6S3D6AGHQ.png",
+    "description": "There are some 20,000 dense globules in the nebula, which are rich in molecular hydrogen. In contrast, the inner region shows very hot gas. The main shell contains a thin ring of enhanced emission from carbon-based molecules.",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "heading": "Pillars of Creation",
+    "slug": "pillars-of-creation",
+    "url": "https://stsci-opo.org/STScI-01GFRYX6CJ1ZTKW4PHAE55BY8P.png",
+    "description": "Many stars are actively forming in these dense blue-gray pillars. When knots of gas and dust with sufficient mass form in these regions, they begin to collapse under their own gravitational attraction, slowly heat up – and eventually form new stars.",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "heading": "Stephan's Quintet (MIRI)",
+    "slug": "stephans-quintet-miri",
+    "url": "https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2022/07/STScI-01G8H5BZ9P60BS78J4004Z90GW.png?crop=faces%2Cfocalpoint&fit=clip&h=2049&w=2444",
+    "description": "A mid-infrared MIRI view of Stephan’s Quintet (HCG 92). Webb reveals sweeping tidal tails, shock waves driven by galaxy collisions, and hidden dusty regions of star formation. Color assignment: Red = F1500W, Green = F1000W, Blue = F770W.",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "heading": "Butterfly Nebula (NGC 6302)",
+    "slug": "butterfly-nebula-ngc-6302",
+    "url": "https://cdn.esawebb.org/archives/images/large/weic2517b.jpg",
+    "description": "Webb (MIRI) combined with ALMA exposes the dusty torus and complex jets around the hidden central star of NGC 6302 (the Butterfly Nebula). The mid-infrared data highlight ionised gas, molecular lines, and crystalline silicate dust structures.",
+    "featured": true
+  },
+  {
+    "id": 8,
+    "heading": "Hubble Ultra Deep Field (Webb)",
+    "slug": "hubble-ultra-deep-field-webb",
+    "url": "https://cdn.esawebb.org/archives/images/screen/udf-b.jpg",
+    "description": "A Webb NIRCam observation revisiting the Hubble Ultra Deep Field. The composite uses multiple NIRCam filters (1.8–4.8 μm) to reveal thousands of distant galaxies — Webb reaches comparable depths to Hubble in far less observing time.",
+    "featured": false
+  }
+]
