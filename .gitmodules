@@ -18,9 +18,9 @@
 	path = WDG-25/2_Frontend/3_JS-Modules/Project_3
 	url = git@github.com:GittyX3b/wbs-project_3.git
 	branch = main
-[submodule "WDG-25/2_Frontend/3_JS-Modules/Project_3-refactored-with-Vite"]
-	path = WDG-25/2_Frontend/3_JS-Modules/Project_3-refactored-with-Vite
-	url = git@github.com:simasso/pokedex.git
+[submodule "WDG-25/2_Frontend/3_JS-Modules/Project_3-refactored-Vite"]
+	path = WDG-25/2_Frontend/3_JS-Modules/Project_3-refactored-Vite
+	url = git@github.com:GittyX3b/wbs-project_3-refactored-vite.git
 	branch = main
 [submodule "WDG-25/2_Frontend/3_JS-Modules/Repo-EMS-Demo"]
 	path = WDG-25/2_Frontend/3_JS-Modules/Repo-EMS-Demo
