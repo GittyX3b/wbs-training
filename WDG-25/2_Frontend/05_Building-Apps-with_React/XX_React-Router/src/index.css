@@ -1,0 +1,407 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark only;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 180em;
+  margin-inline: auto;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  font-style: italic;
+}
+
+.header {
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 5rem;
+  /* CSS nesting allows to write media queries inside of the affected rule */
+  /* new query < > instead of min-width, max-width */
+
+  @media screen and (width < 400px) {
+    margin: 2rem auto;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 2rem;
+  }
+  a:hover,
+  a.active {
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+  }
+  a:has(h1):hover,
+  a.active:has(h1) {
+    text-decoration: none;
+    transition: none;
+    p {
+      background-color: transparent;
+    }
+  }
+}
+
+.grid {
+  margin: 2rem 10rem;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 35rem), 1fr));
+
+  /* Grid rows are defined for the subgrid */
+  grid-auto-rows: 20rem auto auto;
+  grid-auto-flow: dense;
+  column-gap: clamp(1rem, 5vw, 3rem);
+  row-gap: 3rem;
+  place-items: center;
+
+  /* Defines this element as container */
+  /* it's children can reference the size of this container for container queries */
+  /* inline-size -> x-axis*/
+  /* size -> x- and y-axis*/
+  container-type: inline-size;
+
+  @media screen and (width < 1200px) {
+    margin: 2rem 5rem;
+  }
+}
+a:has(.star) {
+  display: grid;
+  grid-row: span 3;
+
+  grid-template-rows: subgrid;
+}
+
+.star {
+  min-width: 35.5rem;
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  /* grid rows will be taken by the subgrid children */
+  grid-row: span 3;
+  /* subgrid aligns with the parent grid */
+  grid-template-rows: subgrid;
+  justify-items: center;
+  background-color: color-mix(in oklch, currentColor 25%, hsla(240, 75%, 38%, 0.282) 75%);
+  border-radius: 1rem;
+  padding-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 2px 1px 3px #2121257a;
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.star[data-feature="true"] {
+  @container (width < 1490px) and (width > 1109px) {
+    width: unset;
+
+    grid-column: span 2;
+
+    grid-template-rows: 20rem 17rem auto;
+
+    .star__img {
+      object-position: top;
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .star__heading {
+      align-self: center;
+      font-size: 2.25rem;
+    }
+    .star__description {
+      align-self: center;
+      padding: 0.5rem;
+    }
+  }
+}
+
+/* single card after view transition */
+.star:not(:has(+ .star)):first-of-type,
+a:has(.star):not(:has(+ a .star)):first-of-type {
+  margin: 0 auto;
+  max-width: 100rem;
+  grid-template-rows: auto;
+  gap: 2rem;
+  background-color: transparent;
+  box-shadow: none;
+
+  & .star__img {
+    /* height: 50dvh;
+    overflow: hidden; */
+    /* grid-column: span 2; */
+    position: absolute;
+    inset: 0;
+  }
+  .star__heading {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: color-mix(in oklch, currentColor 25%, hsla(240, 75%, 38%, 0.705));
+  }
+  .star__description {
+    max-width: 50ch;
+    font-size: 1.5rem;
+    background-color: color-mix(in oklch, currentColor 25%, hsla(240, 75%, 38%, 0.705));
+  }
+}
+
+main:has(.star:only-of-type) {
+  align-items: end;
+  position: relative;
+  min-height: 90dvh;
+  display: grid;
+}
+
+a,
+div:has(> div > .star__img) {
+  transition: all 200ms allow-discrete;
+
+  &:hover {
+    img {
+      overflow: visible;
+      transition: all 200ms allow-discrete;
+    }
+    h3,
+    p {
+      background-color: color-mix(in oklch, currentColor 25%, hsla(240, 75%, 38%, 0.705));
+      transition: all 200ms allow-discrete;
+    }
+  }
+}
+
+.star__img {
+  height: 100%;
+  width: 100%;
+  object-fit: none;
+  transition: all 200ms;
+  overflow: hidden;
+}
+
+.star__heading,
+.star__description {
+  padding: 0.75rem 1.25rem;
+  border-radius: 1rem;
+}
+
+.star__heading {
+  font-size: 1.4rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.star__description {
+  max-width: 40ch;
+  font-size: 1.2rem;
+  z-index: 10;
+  text-wrap: pretty;
+}
+
+.home-link {
+  font-size: 1.5rem;
+  margin: 1rem 1.5rem;
+  text-decoration: none;
+}
+
+.scroll-thingy {
+  position: fixed;
+  right: 0.5rem;
+  font-size: 3rem;
+  /* fist animation, then animation-timeline */
+  animation: scroll-along linear;
+  /* scroll() is relative to the whole page  */
+  /* view() is played as long element is on screen */
+  animation-timeline: scroll();
+  rotate: -45deg;
+
+  &::before {
+    content: "🚀";
+    animation: scroll-along linear;
+    animation-timeline: scroll();
+  }
+}
+
+@keyframes scroll-along {
+  0% {
+    font-size: 1rem;
+    bottom: -30dvh;
+  }
+  66% {
+    content: "🚀";
+  }
+  100% {
+    right: 0;
+    content: "💥";
+    bottom: 100dvh;
+    font-size: 4rem;
+  }
+}
+
+.singlePage {
+  display: flex;
+
+  @media (width < 740px) {
+    flex-direction: column;
+  }
+}
+
+.starPage__form {
+  padding: 2rem 3rem;
+  background-color: rgba(73, 70, 70, 0.76);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.712);
+  border-radius: 2rem;
+  position: absolute;
+  top: 10rem;
+  right: 5rem;
+  display: flex;
+  flex-direction: column;
+  margin-right: clamp(1rem, calc(1rem + 5vw), 10rem);
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeIn 300ms ease both;
+}
+
+.fadeOut {
+  animation: fadeOut 300ms ease both;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn--update {
+  height: 3rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  & span {
+    vertical-align: bottom;
+    color: gray;
+  }
+}
+
+.skeleton {
+  background-color: hsla(0, 0%, 83%, 0.342);
+  border-radius: 1rem;
+  will-change: background-position;
+  animation: skeleton 1.8s ease-in-out infinite;
+  background-image: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    hsla(0, 0%, 67%, 0.877) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% auto;
+  background-repeat: no-repeat;
+  background-position-x: -50%;
+}
+@media (prefers-reduced-motion) {
+  .skeleton {
+    animation-duration: 15s;
+  }
+}
+@keyframes skeleton {
+  from {
+    background-position: 150%;
+  }
+  to {
+    background-position: -50%;
+  }
+}
+
+.skeleton-card {
+  height: 100%;
+}
+
+@property --p {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.message--loading {
+  --p: 0%;
+  text-align: center;
+  font-size: 2rem;
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+  color: transparent;
+  background-image: linear-gradient(
+    100deg in oklch,
+    transparent,
+    aliceblue,
+    rgba(240, 248, 255, 0.149) var(--p),
+    aliceblue,
+    transparent
+  );
+  background-clip: text;
+  animation: shimmer 2s infinite forwards linear;
+}
+
+@keyframes shimmer {
+  to {
+    --p: 100%;
+  }
+}

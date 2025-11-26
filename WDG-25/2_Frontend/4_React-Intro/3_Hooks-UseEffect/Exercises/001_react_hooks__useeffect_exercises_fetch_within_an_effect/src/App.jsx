@@ -5,13 +5,17 @@ const App = () => {
   const [status, setStatus] = useState(null);
   const [data, setData] = useState(null);
 
+  const [current_url, setCurrentUrl] = useState(
+    "https://swapi.tech/api/people",
+  );
+
   useEffect(() => {
     const abortController = new AbortController();
 
-    const getData = async () => {
+    const getData = async (url) => {
       setStatus("loading");
       try {
-        const res = await fetch("https://swapi.tech/api/people", {
+        const res = await fetch(url, {
           signal: abortController.signal,
         });
         if (!res.ok) throw new Error("fetch response falsy");
@@ -27,12 +31,19 @@ const App = () => {
       }
     };
 
-    getData();
-  }, []);
+    getData(current_url);
+  }, [current_url]);
+
+  const handlePageSwitch = (e) => {
+    data[e.target.getAttribute("direction")] &&
+      setCurrentUrl(data[e.target.getAttribute("direction")]);
+  };
+
+  console.log(data);
 
   return (
     <div className="items- flex min-h-screen justify-center bg-red-200">
-      <div className="flex max-w-[1800px] flex-col bg-green-200">
+      <div className="flex w-[1000px] flex-col bg-green-200">
         <h1 className="flex justify-center bg-yellow-200 p-10 text-[4rem] font-bold">
           Star Wars
         </h1>
@@ -43,16 +54,30 @@ const App = () => {
         {status === "success" && (
           <div>
             <div className="m-auto grid w-[50%] grid-cols-2 gap-5">
-              <button className="grow cursor-pointer rounded border border-white bg-blue-500 py-3 font-bold text-white shadow hover:bg-blue-500">
-                previous
-              </button>
-              <button className="grow cursor-pointer rounded border border-white bg-blue-500 py-3 font-bold text-white shadow hover:bg-blue-500">
-                next
-              </button>
+              {data.previous ? (
+                <button
+                  className="grow cursor-pointer rounded border border-white bg-blue-500 py-3 font-bold text-white shadow hover:bg-blue-500"
+                  onClick={handlePageSwitch}
+                  direction="previous"
+                >
+                  previous
+                </button>
+              ) : (
+                <div></div>
+              )}
+              {data.next && (
+                <button
+                  className="grow cursor-pointer rounded border border-white bg-blue-500 py-3 font-bold text-white shadow hover:bg-blue-500"
+                  onClick={handlePageSwitch}
+                  direction="next"
+                >
+                  next
+                </button>
+              )}
             </div>
 
             <div className="flex flex-wrap justify-center gap-5 p-10">
-              {data.results.map((person) => (
+              {data.results?.map((person) => (
                 <article
                   className="flex w-[400px] flex-col items-center justify-between rounded bg-white p-10 shadow"
                   key={person.uid}
