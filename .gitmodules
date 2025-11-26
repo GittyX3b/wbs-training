@@ -26,7 +26,3 @@
 	path = WDG-25/2_Frontend/3_JS-Modules/Project_3-refactored-with-Vite
 	url = git@github.com:simasso/pokedex.git
 	branch = main
-[submodule "WDG-25/2_Frontend/05_Building-Apps-with_React/XX_Self-Assessment-Basics"]
-	path = WDG-25/2_Frontend/05_Building-Apps-with_React/XX_Self-Assessment-Basics
-	url = git@github.com:WebDev-WBSCodingSchool/react-self--assessment-basics.git
-	branch = main
