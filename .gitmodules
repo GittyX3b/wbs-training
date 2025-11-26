@@ -1,10 +1,10 @@
 [submodule "WDG-25/1_Primer/WBS-Repo_Primer"]
 	path = WDG-25/1_Primer/WBS-Repo_Primer
-	url = git@github.com:WDG-025/Primer.git
+	url = git@github.com:GittyX3b/wbs-primer.git
 	branch = main
 [submodule "WDG-25/1_Primer/Project_1"]
 	path = WDG-25/1_Primer/Project_1
-	url = git@github.com:abdulaah-alchag/gruppe-3.git
+	url = git@github.com:GittyX3b/wbs-project_1.git
 	branch = main
 [submodule "WDG-25/2_Frontend/WBS-Repo_Frontend"]
 	path = WDG-25/2_Frontend/WBS-Repo_Frontend
@@ -12,23 +12,23 @@
 	branch = main
 [submodule "WDG-25/2_Frontend/2_Web-APIs/Project_2"]
 	path = WDG-25/2_Frontend/2_Web-APIs/Project_2
-	url = git@github.com:jan-ninh/news-homepage.git
+	url = git@github.com:GittyX3b/wbs-project_2.git
 	branch = main
 [submodule "WDG-25/2_Frontend/3_JS-Modules/Project_3"]
 	path = WDG-25/2_Frontend/3_JS-Modules/Project_3
-	url = git@github.com:simasso/PokedexDiary.git
+	url = git@github.com:GittyX3b/wbs-project_3.git
+	branch = main
+[submodule "WDG-25/2_Frontend/3_JS-Modules/Project_3-refactored-Vite"]
+	path = WDG-25/2_Frontend/3_JS-Modules/Project_3-refactored-Vite
+	url = git@github.com:GittyX3b/wbs-project_3-refactored-vite.git
 	branch = main
 [submodule "WDG-25/2_Frontend/3_JS-Modules/Repo-EMS-Demo"]
 	path = WDG-25/2_Frontend/3_JS-Modules/Repo-EMS-Demo
 	url = git@github.com:GittyX3b/wbs-esm-demo.git
 	branch = main
-[submodule "WDG-25/2_Frontend/3_JS-Modules/Project_3-refactored-with-Vite"]
-	path = WDG-25/2_Frontend/3_JS-Modules/Project_3-refactored-with-Vite
-	url = git@github.com:simasso/pokedex.git
-	branch = main
-[submodule "WDG-25/2_Frontend/5_Building-Apps-with_React/XX_React-Self-Assessment-Basics"]
-	path = WDG-25/2_Frontend/5_Building-Apps-with_React/XX_React-Self-Assessment-Basics
-	url = git@github.com:WebDev-WBSCodingSchool/react-self--assessment-basics.git
+[submodule "WDG-25/2_Frontend/5_Building-Apps-with_React/React-Self-Assessment-Basics"]
+	path = WDG-25/2_Frontend/5_Building-Apps-with_React/React-Self-Assessment-Basics
+	url = git@github.com:GittyX3b/wbs-react-self-assessment-basics.git
 	branch = main
 [submodule "WDG-25/2_Frontend/5_Building-Apps-with_React/Project-4_Travel-Agency-with-react-router"]
 	path = WDG-25/2_Frontend/5_Building-Apps-with_React/Project-4_Travel-Agency-with-react-router
