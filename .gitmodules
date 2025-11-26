@@ -4,7 +4,7 @@
 	branch = main
 [submodule "WDG-25/1_Primer/Project_1"]
 	path = WDG-25/1_Primer/Project_1
-	url = git@github.com:abdulaah-alchag/gruppe-3.git
+	url = git@github.com:GittyX3b/wbs-project_1.git
 	branch = main
 [submodule "WDG-25/2_Frontend/WBS-Repo_Frontend"]
 	path = WDG-25/2_Frontend/WBS-Repo_Frontend
