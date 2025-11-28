@@ -34,3 +34,7 @@
 	path = WDG-25/2_Frontend/5_Building-Apps-with_React/Project-4_Travel-Agency-with-react-router
 	url = git@github.com:GittyX3b/wbs-project_4.git
 	branch = main
+[submodule "WDG-25/2_Frontend/5_Building-Apps-with_React/Project-5_Personal-Diary"]
+	path = WDG-25/2_Frontend/5_Building-Apps-with_React/Project-5_Personal-Diary
+	url = git@github.com:GittyX3b/wbs-project_5.git
+	branch = main
