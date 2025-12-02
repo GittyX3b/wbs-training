@@ -38,3 +38,7 @@
 	path = WDG-25/2_Frontend/5_Building-Apps-with_React/Project-5_Personal-Diary
 	url = git@github.com:GittyX3b/wbs-project_5.git
 	branch = main
+[submodule "WDG-25/2_Frontend/5_Building-Apps-with_React/03_Data-Mutations_(with_forms)/Exercises/Form-Submission"]
+	path = WDG-25/2_Frontend/5_Building-Apps-with_React/03_Data-Mutations_(with_forms)/Exercises/Form-Submission
+	url = git@github.com:GittyX3b/wbs-form-submission.git
+	branch = main
