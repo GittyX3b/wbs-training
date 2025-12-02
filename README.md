@@ -14,4 +14,4 @@
 
 ## Project-Links
 
-Overview: [-> /root](https://gittyx3b.github.io/wbs-training)
+[-> Overview](https://gittyx3b.github.io/wbs-training)
