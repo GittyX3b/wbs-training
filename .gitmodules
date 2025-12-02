@@ -42,3 +42,7 @@
 	path = WDG-25/2_Frontend/5_Building-Apps-with_React/03_Data-Mutations_(with_forms)/Exercises/Form-Submission
 	url = git@github.com:GittyX3b/wbs-form-submission.git
 	branch = main
+[submodule "WDG-25/2_Frontend/5_Building-Apps-with_React/04_Context-API/Example_Shopping-Cart"]
+	path = WDG-25/2_Frontend/5_Building-Apps-with_React/04_Context-API/Example_Shopping-Cart
+	url = git@github.com:GittyX3b/wbs-reducer-context-example.git
+	branch = main

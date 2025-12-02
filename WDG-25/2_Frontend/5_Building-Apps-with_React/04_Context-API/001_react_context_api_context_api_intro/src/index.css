@@ -1,0 +1,14 @@
+.parent {
+  border: 2px solid red;
+  padding: 0.5rem;
+}
+
+.child {
+  border: 2px solid green;
+  padding: 0.5rem;
+}
+
+.grandchild {
+  border: 2px solid blue;
+  padding: 0.5rem;
+}

@@ -1,0 +1,2 @@
+/* Using Tailwind 2 for demo purposes since Tailwind 4 offers no precompiled CSS */
+@import "https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css";
