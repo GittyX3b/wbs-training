@@ -89,20 +89,21 @@ const MainLayout = () => {
 const [counter, setCounter] = useState(0);
 return (
 <>
-<ul>
-<li>
-<Link to='/'>Child1</Link>
-</li>
-<li>
-<Link to='/child2'>Child2</Link>
-</li>
-</ul>
-<div>
-<Outlet context={{ counter, setCounter }} />
-</div>
-</>
-);
-};
+
+   <ul>
+   <li>
+   <Link to='/'>Child1</Link>
+   </li>
+   <li>
+   <Link to='/child2'>Child2</Link>
+   </li>
+   </ul>
+   <div>
+   <Outlet context={{ counter, setCounter }} />
+   </div>
+   </>
+   );
+   };
 
 const Child1 = () => {
 const { counter } = useOutletContext();
@@ -112,13 +113,14 @@ const Child2 = () => {
 const { counter, setCounter } = useOutletContext();
 return (
 <>
-<div>{counter}</div>
-<button onClick={() => setCounter((prev) => prev + 1)}>
-Click to increase counter and then go back to Child1
-</button>
-</>
-);
-};
+
+   <div>{counter}</div>
+   <button onClick={() => setCounter((prev) => prev + 1)}>
+   Click to increase counter and then go back to Child1
+   </button>
+   </>
+   );
+   };
 
 const App = () => (
 <BrowserRouter>
