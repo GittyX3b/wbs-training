@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@plugin 'daisyui' {
+  themes:
+    light,
+    dark --prefersdark,
+    dracula,
+    nord,
+    wireframe --default;
+  root: ":root";
+  include:;
+  exclude:;
+  prefix:;
+  logs: true;
+}
+
+@import "@assets/styles/colors.css";
+@import "@assets/styles/fonts.css";
+@import "@assets/styles/text.css";
+
+/* Adding root custom styles => check @assets/styles for more */
+@theme {
+}
+
+.app-maxwidth {
+  @apply max-w-[1600px];
+}
