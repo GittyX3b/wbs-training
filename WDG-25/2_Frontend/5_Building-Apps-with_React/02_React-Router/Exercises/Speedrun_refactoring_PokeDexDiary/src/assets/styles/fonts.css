@@ -1,0 +1,12 @@
+@font-face {
+  font-family: Pangolin;
+  src: url(@assets/fonts/Pangolin-Regular.ttf);
+}
+
+@theme {
+  --font-pangolin: Pangolin, monospace;
+}
+
+body {
+  @apply font-pangolin;
+}

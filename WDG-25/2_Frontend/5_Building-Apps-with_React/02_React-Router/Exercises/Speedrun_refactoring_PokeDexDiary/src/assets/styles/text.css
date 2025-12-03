@@ -1,0 +1,15 @@
+body {
+  @apply text-color-1;
+}
+@apply py-4 text-[1.2rem];
+
+h1 {
+  @apply py-8 text-[2.2rem];
+}
+
+h2 {
+  @apply py-6 text-[1.5rem];
+}
+
+h3 {
+}
