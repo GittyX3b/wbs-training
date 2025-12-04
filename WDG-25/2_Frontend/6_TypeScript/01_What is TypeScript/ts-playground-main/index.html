@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TS Playground</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script type="module">
+      import './src/style.css';
+      import consoleToDOM from '@weyvern/console-to-dom';
+      consoleToDOM({
+        output: document.body,
+        classNames: {
+          outputLine: 'console-line',
+          log: 'console-log',
+          warn: 'console-warn',
+          info: 'console-info',
+          error: 'console-error'
+        },
+        showLineNumber: true
+      });
+      const styleOverlay = () => {
+        const overlayHost = document.querySelector('vite-plugin-checker-error-overlay');
+        if (!overlayHost || !overlayHost.shadowRoot) return;
+        const applyStyles = () => {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          let style = overlayHost.shadowRoot.querySelector('style[data-theme-style]');
+          if (style) style.remove();
+          style = document.createElement('style');
+          style.setAttribute('data-theme-style', 'true');
+          style.textContent = `
+      .window {
+        background: ${prefersDark ? '#0f172a' : '#ffffff'} !important;
+        color: ${prefersDark ? '#f8fafc' : '#1f2937'} !important;
+        border-radius: 0.75rem !important;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2) !important;
+        font-family: inherit !important;
+      }
+    `;
+          overlayHost.shadowRoot.appendChild(style);
+        };
+
+        applyStyles();
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        mediaQuery.addEventListener('change', applyStyles);
+      };
+      window.addEventListener('load', styleOverlay);
+      window.onerror = function (message, source, lineno, colno, error) {
+        if (error instanceof Error) {
+          console.error(`${error.name}: ${error.message}`);
+        } else {
+          console.error('Error:', message);
+        }
+      };
+      window.onunhandledrejection = function (event) {
+        event.preventDefault();
+        const reason = event.reason;
+        if (reason instanceof Error) {
+          console.error(`${reason.name}: ${reason.message}`);
+        } else {
+          console.error('Unhandled rejection:', reason);
+        }
+      };
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
