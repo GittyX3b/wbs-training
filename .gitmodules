@@ -46,3 +46,7 @@
 	path = WDG-25/2_Frontend/5_Building-Apps-with_React/04_Context-API/Example_Shopping-Cart
 	url = git@github.com:GittyX3b/wbs-reducer-context-example.git
 	branch = main
+[submodule "WDG-25/2_Frontend/6_TypeScript/Project_6"]
+	path = WDG-25/2_Frontend/6_TypeScript/Project_6
+	url = git@github.com:GittyX3b/wbs-project_6.git
+	branch = main
