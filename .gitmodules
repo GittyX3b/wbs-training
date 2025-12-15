@@ -50,3 +50,7 @@
 	path = WDG-25/2_Frontend/6_TypeScript/Project_6
 	url = git@github.com:GittyX3b/wbs-project_6.git
 	branch = main
+[submodule "WDG-25/2_Frontend/7_TypeScript-in-React/Project_7"]
+	path = WDG-25/2_Frontend/7_TypeScript-in-React/Project_7
+	url = git@github.com:GittyX3b/wbs-project_7.git
+	branch = main
