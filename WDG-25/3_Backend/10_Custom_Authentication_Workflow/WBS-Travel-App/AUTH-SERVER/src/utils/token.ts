@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
-import { ACCESS_JWT_SECRET } from '#config';
+import { randomBytes } from 'crypto';
+import { ACCESS_JWT_SECRET, REFRESH_TOKEN_TTL } from '#config';
 
 /* Access token */
 type jwtPayload = {
@@ -17,4 +18,16 @@ export function createAccessToken(payload: jwtPayload) {
 export function checkAccessToken(token: string) {
   const payload = jwt.verify(token, ACCESS_JWT_SECRET);
   return payload;
+}
+
+/* Refresh token */
+export function createRefreshToken(userId: string) {
+  const token = randomBytes(32).toString('hex');
+  const expireAt = new Date(Date.now() + REFRESH_TOKEN_TTL * 1000);
+
+  return {
+    token,
+    userId,
+    expireAt
+  };
 }
