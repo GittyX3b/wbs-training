@@ -19,7 +19,7 @@ const userSchema = new Schema(
     },
     roles: {
       type: [String],
-      default: ['User']
+      default: ['user']
     },
     isActive: {
       type: Boolean,

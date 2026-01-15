@@ -10,7 +10,7 @@ type jwtPayload = {
 
 export function createAccessToken(payload: jwtPayload) {
   const accessToken = jwt.sign({ sub: payload.userId, roles: payload.roles }, ACCESS_JWT_SECRET, {
-    expiresIn: '5min'
+    expiresIn: '15min'
   });
   return accessToken;
 }
@@ -30,4 +30,9 @@ export function createRefreshToken(userId: string) {
     userId,
     expireAt
   };
+}
+
+export function verifyRefreshToken(token: string, storedToken: string, expireAt: Date) {
+  const isValid = token === storedToken && expireAt > new Date();
+  return isValid;
 }

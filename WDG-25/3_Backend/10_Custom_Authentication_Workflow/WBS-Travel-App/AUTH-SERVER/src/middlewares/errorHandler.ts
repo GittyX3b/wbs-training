@@ -1,6 +1,6 @@
 import { type ErrorRequestHandler } from 'express';
 
-export const errorHandler: ErrorRequestHandler = async (err, req, res, next) => {
+export const errorHandler: ErrorRequestHandler = async (err, _req, res, _next) => {
   if (process.env.NODE_ENV === 'development') {
     res.status(err.cause || 500).json({
       message: err.message,
