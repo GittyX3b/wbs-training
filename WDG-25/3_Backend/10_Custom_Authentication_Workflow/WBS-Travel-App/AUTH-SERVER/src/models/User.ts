@@ -2,32 +2,37 @@ import { Schema, model } from 'mongoose';
 
 const userSchema = new Schema(
   {
-    // TODO:  make sure that the password is hashed before saving
-    firstName: { type: String, required: [true, 'First name is required'], trim: true },
-    lastName: { type: String, required: [true, 'Last name ist required'], trim: true },
+    firstName: {
+      type: String,
+      required: [true, 'firstName is required'],
+      trim: true
+    },
+    lastName: {
+      type: String,
+      required: [true, 'firstName is required'],
+      trim: true
+    },
     email: {
       type: String,
       required: [true, 'Email is required'],
-      unique: [true, 'Email must be unique'],
-      trim: true
+      unique: true,
+      trim: true,
+      match: [/^\S+@\S+\.\S+$/, 'Email is not valid']
     },
     password: {
       type: String,
       required: [true, 'Password is required'],
       select: false,
-      trim: true
+      minlength: [12, 'Password must be at least 6 characters long']
     },
     roles: {
       type: [String],
-      default: ['user']
-    },
-    isActive: {
-      type: Boolean,
-      default: true
+      default: ['user'],
+      required: true
     }
   },
   {
-    timestamps: { createdAt: true, updatedAt: true }
+    timestamps: { createdAt: true, updatedAt: false }
   }
 );
 
