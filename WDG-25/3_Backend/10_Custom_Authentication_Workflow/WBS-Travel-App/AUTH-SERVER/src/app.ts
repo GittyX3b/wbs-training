@@ -19,11 +19,17 @@ app.use(
 
 app.use(express.json(), cookieParser());
 
+app.get('/error', (req, res) => {
+  throw new Error('Something went wrong', { cause: { status: 418 } });
+});
+
 app.use('/auth', authRouter);
 
-// app.use('*splat', notFoundHandler);
+app.use('*splat', (req, res) => {
+  res.status(404).json({ message: 'not found' });
+});
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log(`==> Auth Server listening on port ${port}`);
+  console.log(`Auth Server listening on port ${port}`);
 });

@@ -1,172 +1,133 @@
-import type { RequestHandler } from 'express';
 import { RefreshToken, User } from '#models';
-import {
-  validateRegisterData,
-  validateLoginData,
-  encryptPassword,
-  checkPassword,
-  createAccessToken,
-  checkAccessToken,
-  createRefreshToken,
-  verifyRefreshToken
-} from '#utils';
-import { REFRESH_TOKEN_TTL } from '#config';
+import type { RequestHandler, Response } from 'express';
+import { createAccessToken, createRefreshToken, hashPassword } from '#utils';
+import { ACCESS_JWT_SECRET, REFRESH_TOKEN_TTL } from '#config';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
-export const register: RequestHandler = async (req, res) => {
-  /* Validate input values using zod */
-  if (!validateRegisterData(req.body))
-    throw new Error('Recieved data is not matching registerSchema', { cause: 400 });
-
-  /* Deconstruct input to variables */
-  const { firstName, lastName, email, password, confirmPassword, roles, isActive } = req.body;
-
-  /* Check if email already exists */
-  const existingUser = await User.findOne({ email: email });
-  if (existingUser) throw new Error('User email already exists', { cause: 409 });
-
-  /* Hash password */
-  const hashedPassword = await encryptPassword(password);
-
-  /* Create user in db */
-  await User.create({
-    firstName,
-    lastName,
-    password: hashedPassword,
-    email,
-    roles,
-    isActive
-  });
-
-  /* Get user data for response from db (without password) */
-  const resUser = await User.findOne({ email: email });
-  if (!resUser) throw new Error('Created user could not be fetched from db', { cause: 400 });
-
-  /* Create tokens */
-  const accessToken = createAccessToken({
-    userId: resUser._id.toString(),
-    roles: resUser.roles
-  });
-
-  const refreshToken = createRefreshToken(resUser._id.toString());
-
-  /* Delete existing token */
-  await RefreshToken.findOneAndDelete({ userId: resUser._id.toString() });
-  /* Save new token */
-  await RefreshToken.create(refreshToken);
-
-  /* Set cookies */
-  res.cookie('accessToken', accessToken, {
-    httpOnly: true,
-    sameSite: 'strict',
-    secure: process.env.NODE_ENV === 'production'
-  });
-
+function setAuthCookies(res: Response, accessToken: string, refreshToken: string) {
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict',
     maxAge: REFRESH_TOKEN_TTL * 1000
   });
 
-  /* Respond to client */
-  res.status(201).json({ message: 'User successfully registered', createdUser: resUser });
+  res.cookie('accessToken', accessToken, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict'
+  });
+}
+
+export const register: RequestHandler = async (req, res) => {
+  const { firstName, lastName, email, password, roles } = req.body;
+  const userExists = await User.exists({ email });
+  if (userExists) throw new Error('Email already exists', { cause: { status: 400 } });
+
+  console.log(roles);
+  // hash password
+  const hashedPassword = await hashPassword(password);
+
+  const newUser = await User.create({
+    email,
+    password: hashedPassword,
+    firstName,
+    lastName,
+    roles
+  });
+
+  const accessToken = await createAccessToken({ id: newUser._id, roles: newUser.roles });
+  const refreshToken = await createRefreshToken(newUser._id);
+
+  setAuthCookies(res, accessToken, refreshToken);
+
+  res.status(201).json({ message: 'Registered' });
 };
 
 export const login: RequestHandler = async (req, res) => {
-  /* Validate input values using zod */
-  if (!validateLoginData(req.body))
-    throw new Error('Recieved data is not matching loginSchema', { cause: 400 });
-
   const { email, password } = req.body;
 
-  /* Get user from db */
-  const existingUser = await User.findOne({ email: email }).select('+password');
-  if (!existingUser) throw new Error('Incorrect credentials. User does not exist', { cause: 404 });
+  const user = await User.findOne({ email }).select('+password');
+  if (!user) throw new Error(' User not found', { cause: { status: 404 } });
 
-  /* Validate password */
-  const passValid = await checkPassword(password, existingUser.password);
-  if (!passValid) throw new Error('Incorrect credentials. Password incorrect');
+  const isValid = await bcrypt.compare(password, user.password);
 
-  /* Create tokens */
-  const accessToken = createAccessToken({
-    userId: existingUser._id.toString(),
-    roles: existingUser.roles
-  });
+  if (!isValid) throw new Error('Incorrect credentials');
 
-  const refreshToken = createRefreshToken(existingUser._id.toString());
+  const accessToken = await createAccessToken({ id: user._id, roles: user.roles });
+  const refreshToken = await createRefreshToken(user._id);
 
-  /* Delete existing token */
-  await RefreshToken.findOneAndDelete({ userId: existingUser._id.toString() });
-  /* Save token */
-  await RefreshToken.create(refreshToken);
+  setAuthCookies(res, accessToken, refreshToken);
 
-  /* Set cookies */
-  res.cookie('accessToken', accessToken, {
-    httpOnly: true,
-    sameSite: 'strict',
-    secure: process.env.NODE_ENV === 'production'
-  });
-
-  res.cookie('refreshToken', refreshToken, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: REFRESH_TOKEN_TTL * 1000
-  });
-
-  /* Respond to client */
-  res.status(200).json({ message: 'User logged in' });
+  res.status(200).json({ message: 'Logged in' });
 };
 
 export const refresh: RequestHandler = async (req, res) => {
-  // This endpoint should be used to refresh the acces token in background !
-  // TODO: Implement access token refresh and refresh token rotation
-  // Get the refresh token from the cookies and verify it
-  // Look up the refresh token in the database, throw and error, if it canot be found
-  // delete the old refresh token, look up the user and issue new tokens
-  // store the new refresh token in your db and send both access and refresh token via cookies
+  const { refreshToken } = req.cookies;
 
-  /* Get refresh token */
-  const { accessToken, refreshToken } = req.cookies;
-  const accessData = checkAccessToken(accessToken);
-  console.log(accessData);
-  /* Get user id */
-  const userId = checkAccessToken(accessToken).sub;
-  if (!userId) throw new Error('No userId found in accessToken', { cause: 400 });
+  if (!refreshToken)
+    throw new Error('Refresh token is required', {
+      cause: { status: 401 }
+    });
 
-  /* Create new token */
-  const newRefreshToken = createRefreshToken(userId.toString());
+  const storedToken = await RefreshToken.findOne({ token: refreshToken });
+  if (!storedToken)
+    throw new Error('Refresh token not found', {
+      cause: { status: 401 }
+    });
 
-  /* Delete existing token */
-  await RefreshToken.findOneAndDelete({ userId: userId });
-  /* Save token */
-  await RefreshToken.create(newRefreshToken);
+  await RefreshToken.findByIdAndDelete(storedToken._id);
 
-  res.status(200).json({ message: 'renewed refresh token' });
+  const user = await User.findById(storedToken.userId);
+  if (!user) throw new Error('User not found', { cause: { status: 404 } });
 
-  //
+  const newAccessToken = await createAccessToken({ id: user._id, roles: user.roles });
+  const newRefreshToken = await createRefreshToken(user._id);
+
+  setAuthCookies(res, newAccessToken, newRefreshToken);
+
+  res.status(200).json({ message: 'Refreshed' });
 };
 
 export const logout: RequestHandler = async (req, res) => {
-  // TODO: Implement logout by removing the tokens
-  // Delete the refresh token from your database
-  // Clear both cookies
-  // A longer living access token, or a token in a higher risk use case would need to be put on a token blacklist - another entry in your db - and checked on validation
-  // Since our access tokens are valid for a couple of minutes the risk here is acceptable
+  const { refreshToken } = req.cookies;
 
-  /* Get token from cookies */
-  const { accessToken, refreshToken } = req.cookies;
-  if (!accessToken) throw new Error('No access token found in cookie', { cause: 404 });
-  if (!refreshToken) throw new Error('No refresh token found in cookie', { cause: 404 });
+  if (refreshToken) {
+    await RefreshToken.findOneAndDelete({ token: refreshToken });
+  }
 
-  console.log(refreshToken);
+  res.clearCookie('refreshToken');
+  res.clearCookie('accessToken');
+
+  res.status(200).json({ message: 'Successfully logged out' });
 };
 
 export const me: RequestHandler = async (req, res, next) => {
-  // TODO: Implement a me handler
-  // Get the access token and use it to retrieve the user's data
-  // Make sure that the token is valid and not expired
-  // When expired, send a WWW-Authenticate Header with a 'token_expired' payload
-
-  /* Get access token from cookie */
   const { accessToken } = req.cookies;
-  console.log(accessToken);
+
+  if (!accessToken)
+    throw new Error('Acces token is required', {
+      cause: { status: 401 }
+    });
+
+  try {
+    const decoded = jwt.verify(accessToken, ACCESS_JWT_SECRET) as jwt.JwtPayload;
+    if (!decoded.sub) throw new Error('Invalid access token', { cause: { status: 401 } });
+
+    const user = await User.findById(decoded.sub);
+    if (!user) throw new Error('User not found', { cause: { status: 404 } });
+
+    res.status(200).json({ message: 'Valid token', user });
+  } catch (error) {
+    if (error instanceof jwt.TokenExpiredError) {
+      return next(
+        new Error('Expired access token', {
+          cause: { status: 401, code: 'ACCESS_TOKEN_EXPIRED' }
+        })
+      );
+    }
+
+    return next(new Error('Invalid access token', { cause: { status: 401 } }));
+  }
 };

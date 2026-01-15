@@ -24,10 +24,6 @@
       "development": "./src/schemas/index.ts",
       "default": "./dist/schemas/index.js"
     },
-    "#types": {
-      "development": "./src/types/index.ts",
-      "default": "./dist/types/index.js"
-    },
     "#db": {
       "development": "./src/db.ts",
       "default": "./dist/db.js"
@@ -52,10 +48,8 @@
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
-    "crypto": "^1.0.1",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "jsonwebtoken": "^9.0.2",
-    "mongodb": "^7.0.0",
     "mongoose": "^8.16.5"
   },
   "devDependencies": {

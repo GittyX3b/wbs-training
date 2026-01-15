@@ -8,7 +8,8 @@ export const getAllPosts: RequestHandler = async (_req, res) => {
 };
 
 export const createPost: RequestHandler = async (req, res) => {
-  const newPost = await (await Post.create(req.body)).populate('author');
+  const { user } = req;
+  const newPost = await Post.create({ ...req.body, userId: user?.id });
   res.status(201).json(newPost);
 };
 
@@ -27,9 +28,24 @@ export const updatePost: RequestHandler = async (req, res) => {
     params: { id }
   } = req;
   if (!isValidObjectId(id)) throw new Error('Invalid id', { cause: 400 });
-  const updatedPost = await Post.findByIdAndUpdate(id, req.body, { new: true }).populate('author');
-  if (!updatedPost) throw new Error(`Post with id of ${id} doesn't exist`, { cause: 404 });
-  res.json(updatedPost);
+
+  const { title, image, content } = req.body;
+  const { user } = req;
+
+  const postInDb = await Post.findById(id);
+  if (!postInDb) throw new Error(`Post with id of ${id} does not exist`, { cause: { status: 404 } });
+
+  if (postInDb.userId.toString() !== user?.id)
+    throw new Error('Not authorized', {
+      cause: { status: 403 }
+    });
+
+  postInDb.title = title;
+  postInDb.content = content;
+  postInDb.image = image;
+  postInDb.save();
+
+  res.status(200).json(postInDb);
 };
 
 export const deletePost: RequestHandler = async (req, res) => {
