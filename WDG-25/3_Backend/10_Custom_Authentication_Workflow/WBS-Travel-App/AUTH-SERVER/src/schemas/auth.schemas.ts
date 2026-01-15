@@ -1,7 +1,7 @@
 import { z } from 'zod/v4';
 
 const emailError = 'Please provide a valid email address.';
-const emailSchema = z.string({ error: emailError }).trim();
+const emailSchema = z.email({ error: emailError }).trim();
 
 const basePasswordSchema = z
   .string({ error: 'Password must be a string' })

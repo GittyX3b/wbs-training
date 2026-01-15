@@ -6,7 +6,9 @@ import {
   encryptPassword,
   checkPassword,
   createAccessToken,
-  createRefreshToken
+  checkAccessToken,
+  createRefreshToken,
+  verifyRefreshToken
 } from '#utils';
 import { REFRESH_TOKEN_TTL } from '#config';
 
@@ -26,7 +28,7 @@ export const register: RequestHandler = async (req, res) => {
   const hashedPassword = await encryptPassword(password);
 
   /* Create user in db */
-  const newUser = await User.create({
+  await User.create({
     firstName,
     lastName,
     password: hashedPassword,
@@ -47,8 +49,10 @@ export const register: RequestHandler = async (req, res) => {
 
   const refreshToken = createRefreshToken(resUser._id.toString());
 
-  /* Save token */
-  const newRefreshToken = RefreshToken.create(refreshToken);
+  /* Delete existing token */
+  await RefreshToken.findOneAndDelete({ userId: resUser._id.toString() });
+  /* Save new token */
+  await RefreshToken.create(refreshToken);
 
   /* Set cookies */
   res.cookie('accessToken', accessToken, {
@@ -63,11 +67,12 @@ export const register: RequestHandler = async (req, res) => {
     maxAge: REFRESH_TOKEN_TTL * 1000
   });
 
-  /* Response to client */
+  /* Respond to client */
   res.status(201).json({ message: 'User successfully registered', createdUser: resUser });
 };
 
 export const login: RequestHandler = async (req, res) => {
+  /* Validate input values using zod */
   if (!validateLoginData(req.body))
     throw new Error('Recieved data is not matching loginSchema', { cause: 400 });
 
@@ -89,8 +94,10 @@ export const login: RequestHandler = async (req, res) => {
 
   const refreshToken = createRefreshToken(existingUser._id.toString());
 
+  /* Delete existing token */
+  await RefreshToken.findOneAndDelete({ userId: existingUser._id.toString() });
   /* Save token */
-  const newRefreshToken = RefreshToken.create(refreshToken);
+  await RefreshToken.create(refreshToken);
 
   /* Set cookies */
   res.cookie('accessToken', accessToken, {
@@ -105,16 +112,37 @@ export const login: RequestHandler = async (req, res) => {
     maxAge: REFRESH_TOKEN_TTL * 1000
   });
 
-  /* Respond tio client */
+  /* Respond to client */
   res.status(200).json({ message: 'User logged in' });
 };
 
 export const refresh: RequestHandler = async (req, res) => {
+  // This endpoint should be used to refresh the acces token in background !
   // TODO: Implement access token refresh and refresh token rotation
   // Get the refresh token from the cookies and verify it
   // Look up the refresh token in the database, throw and error, if it canot be found
   // delete the old refresh token, look up the user and issue new tokens
   // store the new refresh token in your db and send both access and refresh token via cookies
+
+  /* Get refresh token */
+  const { accessToken, refreshToken } = req.cookies;
+  const accessData = checkAccessToken(accessToken);
+  console.log(accessData);
+  /* Get user id */
+  const userId = checkAccessToken(accessToken).sub;
+  if (!userId) throw new Error('No userId found in accessToken', { cause: 400 });
+
+  /* Create new token */
+  const newRefreshToken = createRefreshToken(userId.toString());
+
+  /* Delete existing token */
+  await RefreshToken.findOneAndDelete({ userId: userId });
+  /* Save token */
+  await RefreshToken.create(newRefreshToken);
+
+  res.status(200).json({ message: 'renewed refresh token' });
+
+  //
 };
 
 export const logout: RequestHandler = async (req, res) => {
