@@ -21,4 +21,4 @@ app.use('/*splat', (_req, res) => {
 });
 app.use(errorHandler);
 
-app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
+app.listen(port, () => console.log(`API Server listening on http://localhost:${port}`));
