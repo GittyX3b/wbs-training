@@ -24,22 +24,22 @@ Starter code for authentication/authorization module at WBS Coding School
 - `App.tsx` returns a `BrowserRouter`:
   - All the navigation is nested under a `RootLayout`. This is important because we'll implement some React Contexts
 - The code is organised as follows:
-  - There's a path resolution alias `@/` => `.src/` to avoid relative paths in imports. This is setup in `vite.config.js` to inform Vite, and `tsconfig.json` to inform the TS compiler in the editor.
+  - There's a path resolution alias `@/` => `.src/` to avoid relative paths in imports. This is setup in `vite.config.js` to inform Vite, and `jsconfig.json` to inform the TS compiler in the editor.
     - e.g:
     ```javascript
     // src/pages/Diary.tsx
-    import { getPosts } from "@/data";
+    import { getPosts } from '@/data';
     // instead of
-    import { getPosts } from "../data";
+    import { getPosts } from '../data';
     ```
   - For organisation sake, components are grouped in directories, and imported and re-exported from an `index.ts` file:
     ```javascript
     // src/pages/Diary.tsx
     // This allows us to do this
-    import { PostCard, PostsSkeleton } from "@/components";
+    import { PostCard, PostsSkeleton } from '@/components';
     // instead of this
-    import PostCard from "@/components/PostCard";
-    import PostsSkeleton from "@/components/PostsSkeleton";
+    import PostCard from '@/components/PostCard';
+    import PostsSkeleton from '@/components/PostsSkeleton';
     // Ain't nobody got time for that
     ```
   - `pages`: React components that are directly mapped to a route.
