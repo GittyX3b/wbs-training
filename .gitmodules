@@ -58,3 +58,7 @@
 	path = WDG-25/3_Backend/10_Custom_Authentication_Workflow/Project_8
 	url = git@github.com:GittyX3b/wbs-project_8.git
 	branch = main
+[submodule "WDG-25/3_Backend/11_AI_Integration/Local-Setup"]
+	path = WDG-25/3_Backend/11_AI_Integration/Local-Setup
+	url = git@github.com:GittyX3b/local-llm-setup.git
+	branch = main
