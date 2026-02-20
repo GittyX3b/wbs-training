@@ -4,14 +4,17 @@
 
 # WBS Coding Bootcamp (10/2025-02/2026)
 
-## Project-Links
+## WGD#25 "Fullstack App- & Web Development"
+
+<br/>
+<br/>
+
+### Project-Links
 
 [-> Overview](https://gittyx3b.github.io/wbs-training)
 
 <br/>
 <br/>
-
-## WGD#25 "Fullstack App- & Web Development"
 
 [-> WBS Lecture Dashboard](https://learn.wbscodingschool.com/)
 
