@@ -15,7 +15,7 @@
 
 [-> WBS Lecture Dashboard](https://learn.wbscodingschool.com/)
 
-[-> WBS Example Soulutions](https://github.com/GittyX3b/wbs-lectures-and-exercises)
+[-> WBS Example Solutions](https://github.com/GittyX3b/wbs-lectures-and-exercises)
 
 [-> WBS Playground](https://playground.wbscod.in/)
 
