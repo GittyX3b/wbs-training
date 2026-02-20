@@ -1,7 +1,3 @@
-[submodule "WDG-25/1_Primer/WBS-Repo_Primer"]
-	path = WDG-25/1_Primer/WBS-Repo_Primer
-	url = git@github.com:GittyX3b/wbs-primer.git
-	branch = main
 [submodule "WDG-25/1_Primer/Project_1"]
 	path = WDG-25/1_Primer/Project_1
 	url = git@github.com:GittyX3b/wbs-project_1.git
